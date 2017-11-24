@@ -1,0 +1,40 @@
+﻿# Tiled2Unity generated file. Do not modify by hand.
+# Wavefront file for 'Tutorial_Fight_mesh_0012.obj'
+
+# Vertices (Count = 12)
+v -672 -528 0
+v -688 -528 0
+v -688 -512 0
+v -672 -512 0
+v -672 -544 0
+v -688 -544 0
+v -688 -528 0
+v -672 -528 0
+v -736 -544 0
+v -752 -544 0
+v -752 -528 0
+v -736 -528 0
+
+# Texture cooridinates (Count = 10)
+vt 0.2727273 0.1777778
+vt 0.3181818 0.1777778
+vt 0.3181818 0.2
+vt 0.2727273 0.2
+vt 0.2727273 0.1555555
+vt 0.3181818 0.1555555
+vt 0.4545455 0.1555555
+vt 0.5 0.1555555
+vt 0.5 0.1777778
+vt 0.4545455 0.1777778
+
+# Normal
+vn 0 0 -1
+
+# Mesh description
+g Tutorial_Fight_mesh_0012
+
+# Faces
+f 1/1/1 2/2/1 3/3/1 4/4/1
+f 5/5/1 6/6/1 7/2/1 8/1/1
+f 9/7/1 10/8/1 11/9/1 12/10/1
+
