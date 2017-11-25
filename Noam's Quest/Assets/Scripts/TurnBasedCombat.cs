@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TurnBasedCombat : MonoBehaviour {
 		
@@ -9,7 +10,7 @@ public class TurnBasedCombat : MonoBehaviour {
 		private Character Noam = new Noam();
 		private Character Enemy1 = new Enemy1();
 		private int randomAccuracy;
-		private int randomAction;
+		private int randomAction = 0;
 		
 	// Setup all different states that fight can be in
 public enum FightStates{
@@ -22,6 +23,7 @@ public enum FightStates{
 	private FightStates currentState;
 
 
+
 	void Start () {
 		currentState = FightStates.PLAYERCHOICE;
 	}
@@ -30,69 +32,134 @@ public enum FightStates{
 		switch (currentState) {
 		//Players move
 		case (FightStates.PLAYERCHOICE):
-		//Attack move happens if UpArrow is pushed
+			//reset Players stats
+			//Debug.Log ("resetPlayerStats");
+			//Attack move happens if UpArrow is pushed
 			if (Input.GetKeyDown (KeyCode.UpArrow)) {
-				Debug.Log ("Attack");
+				Debug.Log ("AttackMoveSelected");
 				//Generate random variable for testing accuracy
 				randomAccuracy = Random.Range (1, 101);
+				Debug.Log (randomAccuracy);
 				//Compare random variable to Noams accuracy to see if attack hits
 				if (randomAccuracy > 0 && randomAccuracy <= Noam.Accuracy) {
-					Debug.Log("HIT");
+					Debug.Log ("HIT");
 					//Does Dmg to enemy
 					Enemy1.Hp = Enemy1.Hp - Noam.Dmg;
-				}
+				} 
+				Noam.Dmg = 25;
+				Noam.Accuracy = 100;
+				Debug.Log (Noam.Dmg);
+				Debug.Log (Noam.Accuracy);
 				//Checks if the enemy is dead
-				if (Enemy1.Hp <= 0) {
-					// If yes, changes state to WIN
-					Debug.Log ("WIN");
+				if (Enemy1.Hp > 0) {
+					// If yes, changes state to ENEMYSCHOICE
+					Debug.Log ("Enemyturn");
+					currentState = FightStates.ENEMYCHOICE;
+					//If no, changes state to WIN
+				} else {
 					currentState = FightStates.WIN;
-					//If no, changes state to ENEMYCHOICE
-				} else
-					Debug.Log ("ENEMYCHOICE");
-				currentState = FightStates.ENEMYCHOICE;
+				}
 			}
 			if (Input.GetKeyDown (KeyCode.RightArrow)) {
 				Debug.Log ("Block");
 				Enemy1.Dmg = Enemy1.Dmg - Noam.Block;
 				currentState = FightStates.ENEMYCHOICE;
+				Noam.Dmg = 25;
+				Noam.Accuracy = 100;
 			}
 			if (Input.GetKeyDown (KeyCode.LeftArrow)) {
 				Debug.Log ("Dodge");
 				Enemy1.Accuracy = Enemy1.Accuracy - Noam.Dodge;
 				currentState = FightStates.ENEMYCHOICE;
+				Noam.Dmg = 25;
+				Noam.Accuracy = 100;
 			}
 			if (Input.GetKeyDown (KeyCode.DownArrow)) {
 				Debug.Log ("Inventory");
+				//SceneManager.LoadScene ("InventoryPrototype1");
+				currentState = FightStates.ENEMYCHOICE;
+				Noam.Dmg = 25;
+				Noam.Accuracy = 100;
 			}
 			break;
 
 		case (FightStates.ENEMYCHOICE):
-			Debug.Log ("resetPlayerStatss");
-			resetPlayerStats();
+			//reset Enemys stats
+			//Debug.Log ("resetEnemyStats");
+			randomAction = Random.Range (1, 4);
+			Debug.Log (randomAction);
+			//Attack move happens if randomAction variable shuffles 1
+			if (randomAction == 1) {
+				Debug.Log ("EnemyAttackSelected");
+				Debug.Log ("Noams HP" + Noam.Hp);
+				Debug.Log ("Enemy Accuracy" + Enemy1.Accuracy);
+				Debug.Log ("Enemy Dmg" + Enemy1.Dmg);
+				//Generate random variable for testing accuracy
+				randomAccuracy = Random.Range (1, 101);
+				Debug.Log (randomAccuracy);
+				//Compare random variable to Noams accuracy to see if attack hits
+				if (randomAccuracy > 0 && randomAccuracy <= Enemy1.Accuracy) {
+					//Does Dmg to enemy
+					Noam.Hp = Noam.Hp - Enemy1.Dmg;
+					Enemy1.Dmg = 10;
+					Enemy1.Accuracy = 90;
+				}
+				//Checks if the player is dead
+				if (Noam.Hp > 0) {
+					// If yes, changes state to LOSE
+					currentState = FightStates.PLAYERCHOICE;
+					//If no, changes state to PLAYERCHOICE
+				} else{
+					//Change state to PLAYERCHOICE
+					currentState = FightStates.LOSE;
+			}
+		}
+			//Block move happens if randomAction variable shuffles 2
+			if (randomAction == 2) {
+				Noam.Dmg = Noam.Dmg - Enemy1.Block;
+				currentState = FightStates.PLAYERCHOICE;
+				Enemy1.Dmg = 10;
+				Enemy1.Accuracy = 90;
+			}
+			//Dodge move happens if randomAction variable shuffles 3
+			if (randomAction == 3) {
+				Noam.Accuracy = Noam.Accuracy - Enemy1.Dodge;
+				currentState = FightStates.PLAYERCHOICE;
+				Enemy1.Dmg = 10;
+				Enemy1.Accuracy = 90;
+			}
 
-			break;	
+			break;
 
 		case (FightStates.WIN):
+			SceneManager.LoadScene ("Tutorial_Fight");
 			break;	
 
 		case (FightStates.LOSE):
+			SceneManager.LoadScene ("Tutorial");
 			break;	
 
 		}
 
+
+		
 		}
-	// Resetting enemys Dmg and accuracy stats
-	private void resetEnemyStats (){
+	/* Resetting enemys Dmg and accuracy stats
+	private void resetEnemyDmg(){
 		Enemy1.Dmg = Enemy1.Dmg;
+	}
+	private void resetEnemyAccuracy(){
 		Enemy1.Accuracy = Enemy1.Accuracy;
 	}
 	// Resetting players Dmg and accuracy stats
-	private void resetPlayerStats (){
+	private void resetPlayerDmg (){
 		Noam.Dmg = Noam.Dmg;
+	}
+	private void resetPlayerAccuracy(){
 		Noam.Accuracy = Noam.Accuracy;
-	}
-
+	}*/
 		
-	}
+}
+
 	
 
