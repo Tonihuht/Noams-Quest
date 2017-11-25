@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Door1
+  - JeromeFight
+  - Potion
+  - KeyItem
   layers:
   - Default
   - TransparentFX

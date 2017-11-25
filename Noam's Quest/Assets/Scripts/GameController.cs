@@ -14,6 +14,15 @@ public class GameController : MonoBehaviour {
 		if (col.gameObject.tag == "Door1") {
 			SceneManager.LoadScene ("Tutorial_Fight");
 		}
-	
+		if (col.gameObject.tag == "JeromeFight") {
+			Debug.Log ("Jerome!");
+			SceneManager.LoadScene ("FightScreen");
+		}
+		if (col.gameObject.tag == "Potion") {
+			Debug.Log ("AddToInventory");
+		}
+		if (col.gameObject.tag == "KeyItem") {
+			Debug.Log ("AddToKeyItems");
+		}
 	}
 }
