@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour {
 	public int playerSpeed = 10;
 	private float moveX;
 	private float moveY;
+	public Inventory inventory;
 
 	
 	// Update is called once per frame
@@ -21,5 +22,10 @@ public class PlayerControl : MonoBehaviour {
 
 		//Physics for the player
 		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveX * playerSpeed, moveY * playerSpeed);
+	}
+	private void OnCollisionEnter2D(Collider2D coll) {
+		if (other.tag == "item") {
+			inventory.AddItem (other.GetComponent<Item> ());
+		}
 	}
 }

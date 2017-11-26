@@ -9,13 +9,16 @@ public class Item : MonoBehaviour {
 	public ItemType type;
 	public Sprite spriteNeutral;
 	public Sprite spriteHighlighted;
+	public int maxSize;
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public void Use () {
+		switch (type) {
+		case ItemType.HEALTH:
+			Debug.Log ("Used a health potion");
+			break;
+		case ItemType.KEY:
+			Debug.Log ("Used a key");
+			break;
+		}
 	}
 }

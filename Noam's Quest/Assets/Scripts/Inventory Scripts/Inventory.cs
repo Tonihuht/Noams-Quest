@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour {
 	public float slotSize;
 	public GameObject slotPrefab;
 	private List<GameObject> allSlots;
+	private int emptySlot;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,7 @@ public class Inventory : MonoBehaviour {
 	}
 	private void CreateLayout () {
 		allSlots = new List<GameObject> ();
+		emptySlot = slots;
 		inventoryWidth = (slots / rows) * (slotSize + slotPaddingLeft) + slotPaddingLeft;
 		inventoryHeight = rows * (slotSize + slotPaddingTop) + slotPaddingTop;
 		inventoryRect = GetComponent<RectTransform> ();
@@ -46,5 +48,27 @@ public class Inventory : MonoBehaviour {
 
 			}
 		}
+	}
+
+	public bool AddItem(Item item) {
+		if (item.maxSize == 1) {
+			PlaceEmpty (item);
+			return true;
+		}
+		return false;
+	}
+
+	private bool PlaceEmpty(Item item) {
+		if (emptySlot > 0) {
+			foreach (GameObject slot in allSlots) {
+				Slot tmp = slot.GetComponent<Slot> ();
+				if (tmp.isEmpty) {
+					tmp.AddItem (item);
+					emptySlot--;
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }
