@@ -14,7 +14,12 @@ public class Inventory : MonoBehaviour {
 	public float slotSize;
 	public GameObject slotPrefab;
 	private List<GameObject> allSlots;
-	private int emptySlot;
+
+	private static int emptySlots;
+	public static int EmptySlots {
+		get {return emptySlots;}
+		set {emptySlots = value;}
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +32,7 @@ public class Inventory : MonoBehaviour {
 	}
 	private void CreateLayout () {
 		allSlots = new List<GameObject> ();
-		emptySlot = slots;
+		emptySlots = slots;
 		inventoryWidth = (slots / rows) * (slotSize + slotPaddingLeft) + slotPaddingLeft;
 		inventoryHeight = rows * (slotSize + slotPaddingTop) + slotPaddingTop;
 		inventoryRect = GetComponent<RectTransform> ();
@@ -57,14 +62,14 @@ public class Inventory : MonoBehaviour {
 		} else {
 			foreach (GameObject slot in allSlots) {
 				Slot tmp = slot.GetComponent<Slot> ();
-				if (!tmp.isEmpty) {
+				if (!tmp.IsEmpty) {
 					if (tmp.CurrentItem.type == item.type && tmp.IsAvailable) {
 						tmp.AddItem (item);
 						return true;
 					}
 				}
 			}
-			if (emptySlot > 0) {
+			if (emptySlots > 0) {
 				PlaceEmpty (item);
 			}
 		}
@@ -72,12 +77,12 @@ public class Inventory : MonoBehaviour {
 	}
 
 	private bool PlaceEmpty(Item item) {
-		if (emptySlot > 0) {
+		if (emptySlots > 0) {
 			foreach (GameObject slot in allSlots) {
 				Slot tmp = slot.GetComponent<Slot> ();
-				if (tmp.isEmpty) {
+				if (tmp.IsEmpty) {
 					tmp.AddItem (item);
-					emptySlot--;
+					emptySlots--;
 					return true;
 				}
 			}

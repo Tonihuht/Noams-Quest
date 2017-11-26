@@ -112,6 +112,39 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &644777544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 644777545}
+  m_Layer: 0
+  m_Name: Potions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &644777545
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 644777544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.871897, y: -3.136698, z: 2.5941122}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2118056682}
+  - {fileID: 1377286233}
+  - {fileID: 2102344341}
+  - {fileID: 1491171668}
+  - {fileID: 1054446762}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &780596115
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +323,7 @@ GameObject:
   - component: {fileID: 1054446760}
   - component: {fileID: 1054446759}
   m_Layer: 0
-  m_Name: Health (4)
+  m_Name: HealthPotion5
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,7 +368,7 @@ MonoBehaviour:
   type: 0
   spriteNeutral: {fileID: 21300130, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
   spriteHighlighted: {fileID: 21300126, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
-  maxSize: 5
+  maxSize: 3
 --- !u!212 &1054446761
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -386,12 +419,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1054446758}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.54, y: -0.93, z: 0.5567129}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.6681027, y: 2.206698, z: -2.0373993}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 644777545}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054463182
 GameObject:
@@ -467,7 +500,7 @@ GameObject:
   - component: {fileID: 1377286231}
   - component: {fileID: 1377286230}
   m_Layer: 0
-  m_Name: Health (1)
+  m_Name: HealthPotion2
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -512,7 +545,7 @@ MonoBehaviour:
   type: 0
   spriteNeutral: {fileID: 21300130, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
   spriteHighlighted: {fileID: 21300126, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
-  maxSize: 5
+  maxSize: 3
 --- !u!212 &1377286232
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -563,12 +596,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377286229}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.39, y: 1.25, z: 0.5567129}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.481897, y: 4.386698, z: -2.0373993}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 644777545}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1491171664
 GameObject:
@@ -582,7 +615,7 @@ GameObject:
   - component: {fileID: 1491171666}
   - component: {fileID: 1491171665}
   m_Layer: 0
-  m_Name: Health (3)
+  m_Name: HealthPotion4
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,7 +660,7 @@ MonoBehaviour:
   type: 0
   spriteNeutral: {fileID: 21300130, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
   spriteHighlighted: {fileID: 21300126, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
-  maxSize: 5
+  maxSize: 3
 --- !u!212 &1491171667
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -678,12 +711,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1491171664}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 1.22, z: 0.5567129}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.6281028, y: 4.356698, z: -2.0373993}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 644777545}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1535756211
 GameObject:
@@ -918,7 +951,7 @@ GameObject:
   - component: {fileID: 2102344339}
   - component: {fileID: 2102344338}
   m_Layer: 0
-  m_Name: Health (2)
+  m_Name: HealthPotion3
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -963,7 +996,7 @@ MonoBehaviour:
   type: 0
   spriteNeutral: {fileID: 21300130, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
   spriteHighlighted: {fileID: 21300126, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
-  maxSize: 5
+  maxSize: 3
 --- !u!212 &2102344340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1014,12 +1047,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2102344337}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.61, y: 2.91, z: 0.5567129}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.738103, y: 6.046698, z: -2.0373993}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 644777545}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2118056680
 GameObject:
@@ -1033,7 +1066,7 @@ GameObject:
   - component: {fileID: 2118056683}
   - component: {fileID: 2118056684}
   m_Layer: 0
-  m_Name: Health
+  m_Name: HealthPotion1
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1089,12 +1122,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2118056680}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 1.11, z: 0.5567129}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.12810278, y: 4.246698, z: -2.0373993}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 644777545}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2118056683
 MonoBehaviour:
@@ -1110,7 +1143,7 @@ MonoBehaviour:
   type: 0
   spriteNeutral: {fileID: 21300130, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
   spriteHighlighted: {fileID: 21300126, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
-  maxSize: 5
+  maxSize: 3
 --- !u!61 &2118056684
 BoxCollider2D:
   m_ObjectHideFlags: 0
