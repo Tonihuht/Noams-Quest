@@ -54,6 +54,19 @@ public class Inventory : MonoBehaviour {
 		if (item.maxSize == 1) {
 			PlaceEmpty (item);
 			return true;
+		} else {
+			foreach (GameObject slot in allSlots) {
+				Slot tmp = slot.GetComponent<Slot> ();
+				if (!tmp.isEmpty) {
+					if (tmp.CurrentItem.type == item.type && tmp.IsAvailable) {
+						tmp.AddItem (item);
+						return true;
+					}
+				}
+			}
+			if (emptySlot > 0) {
+				PlaceEmpty (item);
+			}
 		}
 		return false;
 	}

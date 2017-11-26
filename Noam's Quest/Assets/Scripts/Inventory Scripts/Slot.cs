@@ -14,12 +14,20 @@ public class Slot : MonoBehaviour {
 		get { return items.Count == 0; }
 	}
 
+	public bool IsAvailable {
+		get {return CurrentItem.maxSize > items.Count;}
+	}
+
+	public Item CurrentItem {
+		get { return items.Peek (); }
+	}
+
 	// Use this for initialization
 	void Start () {
 		items = new Stack<Item> ();
 		RectTransform slotRect = GetComponent<RectTransform> ();
-		RectTransform txtRect = GetComponent<RectTransform> ();
-		int txtScaleFactor = (int)(slotRect.sizeDelta.x * 0.60);
+		RectTransform txtRect = stackTxt.GetComponent<RectTransform> ();
+		int txtScaleFactor = (int)(slotRect.sizeDelta.x * 0.75);
 		stackTxt.resizeTextMaxSize = txtScaleFactor;
 		stackTxt.resizeTextMinSize = txtScaleFactor;
 		txtRect.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, slotRect.sizeDelta.y);
