@@ -456,9 +456,10 @@ GameObject:
   - component: {fileID: 1813764636}
   - component: {fileID: 1813764635}
   - component: {fileID: 1813764637}
+  - component: {fileID: 1813764638}
   m_Layer: 0
   m_Name: Key
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,7 +535,32 @@ MonoBehaviour:
   type: 1
   spriteNeutral: {fileID: 21303546, guid: 4984f2cc8a4bc624f922cb81bae934a3, type: 3}
   spriteHighlighted: {fileID: 21303556, guid: 4984f2cc8a4bc624f922cb81bae934a3, type: 3}
-  maxSize: 0
+  maxSize: 1
+--- !u!61 &1813764638
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1813764634}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.28, y: 0.24}
+    newSize: {x: 0.25, y: 0.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.28, y: 0.24}
+  m_EdgeRadius: 0
 --- !u!1 &2118056680
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,9 +571,10 @@ GameObject:
   - component: {fileID: 2118056682}
   - component: {fileID: 2118056681}
   - component: {fileID: 2118056683}
+  - component: {fileID: 2118056684}
   m_Layer: 0
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -623,7 +650,32 @@ MonoBehaviour:
   type: 0
   spriteNeutral: {fileID: 21300130, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
   spriteHighlighted: {fileID: 21300126, guid: 9ced6bea1d7881b49a003e4d0ec40b05, type: 3}
-  maxSize: 10
+  maxSize: 1
+--- !u!61 &2118056684
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2118056680}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.25, y: 0.28}
+    newSize: {x: 0.25, y: 0.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.28}
+  m_EdgeRadius: 0
 --- !u!1 &2139391461
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 10
+  inventory: {fileID: 780596119}
 --- !u!50 &2139391465
 Rigidbody2D:
   serializedVersion: 4

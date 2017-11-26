@@ -23,9 +23,14 @@ public class PlayerControl : MonoBehaviour {
 		//Physics for the player
 		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveX * playerSpeed, moveY * playerSpeed);
 	}
-	private void OnCollisionEnter2D(Collider2D coll) {
-		if (other.tag == "item") {
-			inventory.AddItem (other.GetComponent<Item> ());
+	private void OnCollisionEnter2D(Collision2D coll) {
+		Debug.Log ("This is an item");
+		if (coll.gameObject.tag == "Item") {
+			inventory.AddItem (coll.gameObject.GetComponent<Item> ());
+			Destroy (coll.gameObject);
 		}
 	}
 }
+
+
+//OnCollisionEnter2D(Collision2D coll)
