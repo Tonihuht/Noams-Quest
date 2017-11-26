@@ -132,7 +132,7 @@ public enum FightStates{
 			break;
 
 		case (FightStates.WIN):
-			SceneManager.LoadScene ("Tutorial_Fight");
+			SceneManager.LoadScene ("Tutorial1");
 			break;	
 
 		case (FightStates.LOSE):

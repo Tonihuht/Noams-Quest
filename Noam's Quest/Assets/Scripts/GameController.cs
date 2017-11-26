@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
-
+	
 	void Start () {
 		
 	}
@@ -12,11 +12,13 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.tag == "Door1") {
-			SceneManager.LoadScene ("Tutorial_Fight");
+			SceneManager.LoadScene ("Tutorial1");
 		}
 		if (col.gameObject.tag == "JeromeFight") {
+			Destroy (col.gameObject);
+			Debug.Log ("Destroy");
+			SceneManager.LoadScene ("FightScreen"); 
 			Debug.Log ("Jerome!");
-			SceneManager.LoadScene ("FightScreen");
 		}
 		if (col.gameObject.tag == "Potion") {
 			Debug.Log ("AddToInventory");
