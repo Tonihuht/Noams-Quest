@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour {
 
@@ -23,11 +24,11 @@ public class PlayerControl : MonoBehaviour {
 		//Physics for the player
 		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveX * playerSpeed, moveY * playerSpeed);
 	}
-	private void OnCollisionEnter2D(Collision2D coll) {
+	private void OnCollisionEnter2D(Collision2D col) {
 		Debug.Log ("This is an item");
-		if (coll.gameObject.tag == "Item") {
-			inventory.AddItem (coll.gameObject.GetComponent<Item> ());
-			Destroy (coll.gameObject);
+		if (col.gameObject.tag == "Item") {
+			inventory.AddItem (col.gameObject.GetComponent<Item> ());
+			Destroy (col.gameObject);
 		}
 	}
 }

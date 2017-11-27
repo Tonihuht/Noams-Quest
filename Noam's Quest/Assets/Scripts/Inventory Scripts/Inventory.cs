@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour {
 
@@ -30,7 +31,7 @@ public class Inventory : MonoBehaviour {
 	void Update () {
 		
 	}
-	private void CreateLayout () {
+	public void CreateLayout () {
 		allSlots = new List<GameObject> ();
 		emptySlots = slots;
 		inventoryWidth = (slots / rows) * (slotSize + slotPaddingLeft) + slotPaddingLeft;
@@ -76,7 +77,7 @@ public class Inventory : MonoBehaviour {
 		return false;
 	}
 
-	private bool PlaceEmpty(Item item) {
+	public bool PlaceEmpty(Item item) {
 		if (emptySlots > 0) {
 			foreach (GameObject slot in allSlots) {
 				Slot tmp = slot.GetComponent<Slot> ();

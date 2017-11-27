@@ -28,7 +28,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler{
 		items = new Stack<Item> ();
 		RectTransform slotRect = GetComponent<RectTransform> ();
 		RectTransform txtRect = stackTxt.GetComponent<RectTransform> ();
-		int txtScaleFactor = (int)(slotRect.sizeDelta.x * 0.75);
+		int txtScaleFactor = (int)(slotRect.sizeDelta.x * 0.6);
 		stackTxt.resizeTextMaxSize = txtScaleFactor;
 		stackTxt.resizeTextMinSize = txtScaleFactor;
 		txtRect.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, slotRect.sizeDelta.y);
