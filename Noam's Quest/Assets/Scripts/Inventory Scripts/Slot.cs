@@ -5,26 +5,36 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerClickHandler{
-
+	//Instantiates the variables needed
 	private Stack<Item> items;
 	public Text stackTxt;
 	public Sprite slotEmpty;
 	public Sprite slotHighlighted;
-
+	/// <summary>
+	/// Gets a value indicating whether the slot is empty or not.
+	/// </summary>
+	/// <value><c>true</c> if this instance is empty; otherwise, <c>false</c>.</value>
 	public bool IsEmpty {
 		get { return items.Count == 0; }
 	}
-
+	/// <summary>
+	/// Gets a value indicating whether the slot is available or not.
+	/// </summary>
+	/// <value><c>true</c> if this instance is available; otherwise, <c>false</c>.</value>
 	public bool IsAvailable {
 		get {return CurrentItem.maxSize > items.Count;}
 	}
-
+	/// <summary>
+	/// Gets the current item.
+	/// </summary>
+	/// <value>The current item.</value>
 	public Item CurrentItem {
 		get { return items.Peek (); }
 	}
 
-	// Use this for initialization
+
 	void Start () {
+		//Instantiates the items list and defines the size of the slots
 		items = new Stack<Item> ();
 		RectTransform slotRect = GetComponent<RectTransform> ();
 		RectTransform txtRect = stackTxt.GetComponent<RectTransform> ();
@@ -35,12 +45,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler{
 		txtRect.SetSizeWithCurrentAnchors (RectTransform.Axis.Horizontal, slotRect.sizeDelta.x);
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+	/// <summary>
+	/// Adds the item.
+	/// </summary>
+	/// <param name="item">Item.</param>
 	public void AddItem(Item item){
 		items.Push (item);
 		if (items.Count > 1) {
@@ -48,7 +56,11 @@ public class Slot : MonoBehaviour, IPointerClickHandler{
 		}
 		ChangeSprite (item.spriteNeutral, item.spriteHighlighted);
 	}
-
+	/// <summary>
+	/// Changes the sprite of the item selected in the inventory.
+	/// </summary>
+	/// <param name="neutral">Neutral.</param>
+	/// <param name="highlight">Highlight.</param>
 	private void ChangeSprite (Sprite neutral, Sprite highlight){
 		GetComponent<Image> ().sprite = neutral;
 		SpriteState st = new SpriteState ();
@@ -56,7 +68,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler{
 		st.pressedSprite = neutral;
 		GetComponent<Button> ().spriteState = st;
 	}
-
+	/// <summary>
+	/// Uses the item selected from the inventory
+	/// </summary>
 	private void UseItem () {
 		if (!IsEmpty) {
 			items.Pop ().Use ();
@@ -67,7 +81,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler{
 			}
 		}
 	}
-
+	/// <summary>
+	/// Raises the pointer click event.
+	/// </summary>
+	/// <param name="eventData">Event data.</param>
 	public void OnPointerClick (PointerEventData eventData) {
 		if (eventData.button == PointerEventData.InputButton.Right) {
 			UseItem ();
