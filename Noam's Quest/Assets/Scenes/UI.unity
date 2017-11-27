@@ -882,6 +882,7 @@ GameObject:
   - component: {fileID: 969945262}
   - component: {fileID: 969945261}
   - component: {fileID: 969945260}
+  - component: {fileID: 969945263}
   m_Layer: 5
   m_Name: DownArrow
   m_TagString: Untagged
@@ -982,6 +983,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 969945258}
+--- !u!114 &969945263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 969945258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressed: 0
 --- !u!1 &1035242418
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +1006,7 @@ GameObject:
   - component: {fileID: 1035242422}
   - component: {fileID: 1035242421}
   - component: {fileID: 1035242420}
+  - component: {fileID: 1035242423}
   m_Layer: 5
   m_Name: RightArrow
   m_TagString: Untagged
@@ -1093,6 +1107,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035242418}
+--- !u!114 &1035242423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1035242418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressed: 0
 --- !u!1 &1126530519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1130,7 @@ GameObject:
   - component: {fileID: 1126530523}
   - component: {fileID: 1126530522}
   - component: {fileID: 1126530521}
+  - component: {fileID: 1126530524}
   m_Layer: 5
   m_Name: LeftArrow
   m_TagString: Untagged
@@ -1204,6 +1231,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1126530519}
+--- !u!114 &1126530524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126530519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressed: 0
 --- !u!1 &1185770227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,6 +1501,7 @@ GameObject:
   - component: {fileID: 1976412965}
   - component: {fileID: 1976412964}
   - component: {fileID: 1976412963}
+  - component: {fileID: 1976412966}
   m_Layer: 5
   m_Name: UpArrow
   m_TagString: Untagged
@@ -1562,3 +1602,15 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1976412961}
+--- !u!114 &1976412966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976412961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressed: 0

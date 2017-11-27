@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour {
 	//Instantiates variables the player uses
-	public int playerSpeed = 10;
+	public int playerSpeed = 5;
 	private float moveX;
 	private float moveY;
 	public Inventory inventory;
