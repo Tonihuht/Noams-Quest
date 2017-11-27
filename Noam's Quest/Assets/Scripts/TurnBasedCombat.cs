@@ -133,6 +133,7 @@ public enum FightStates{
 
 		case (FightStates.WIN):
 			SceneManager.LoadScene ("Tutorial1");
+
 			break;	
 
 		case (FightStates.LOSE):
@@ -144,21 +145,7 @@ public enum FightStates{
 
 		
 		}
-	/* Resetting enemys Dmg and accuracy stats
-	private void resetEnemyDmg(){
-		Enemy1.Dmg = Enemy1.Dmg;
-	}
-	private void resetEnemyAccuracy(){
-		Enemy1.Accuracy = Enemy1.Accuracy;
-	}
-	// Resetting players Dmg and accuracy stats
-	private void resetPlayerDmg (){
-		Noam.Dmg = Noam.Dmg;
-	}
-	private void resetPlayerAccuracy(){
-		Noam.Accuracy = Noam.Accuracy;
-	}*/
-		
+
 }
 
 	
