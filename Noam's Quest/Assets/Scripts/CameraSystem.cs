@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraSystem : MonoBehaviour {
+public class CameraSystem : MonoBehaviour
+{
 
 	// Use this for initialization
 	private GameObject player;
@@ -10,13 +11,15 @@ public class CameraSystem : MonoBehaviour {
 	public float xMax;
 	public float yMin;
 	public float yMax;
-	// Use this for initialization
+
 	void Start ()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
-	// Update is called once per frame
+	/// <summary>
+	/// Lates the update and follows the player as it moves.
+	/// </summary>
 	void LateUpdate ()
 	{
 		float x = Mathf.Clamp (player.transform.position.x, xMin, xMax);

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Inventory : MonoBehaviour {
-
+public class Inventory : MonoBehaviour
+{
+	//Instantiates different variables
 	private RectTransform inventoryRect;
 	private float inventoryWidth;
 	private float inventoryHeight;
@@ -17,21 +18,29 @@ public class Inventory : MonoBehaviour {
 	private List<GameObject> allSlots;
 
 	private static int emptySlots;
+
 	public static int EmptySlots {
-		get {return emptySlots;}
-		set {emptySlots = value;}
+		get { return emptySlots; }
+		set { emptySlots = value; }
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		CreateLayout ();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		
 	}
-	public void CreateLayout () {
+
+	/// <summary>
+	/// Creates the layout of the inventory
+	/// </summary>
+	public void CreateLayout ()
+	{
 		allSlots = new List<GameObject> ();
 		emptySlots = slots;
 		inventoryWidth = (slots / rows) * (slotSize + slotPaddingLeft) + slotPaddingLeft;
@@ -56,7 +65,13 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
-	public bool AddItem(Item item) {
+	/// <summary>
+	/// Adds the item to the inventory
+	/// </summary>
+	/// <returns><c>true</c>, if item was added, <c>false</c> otherwise.</returns>
+	/// <param name="item">Item.</param>
+	public bool AddItem (Item item)
+	{
 		if (item.maxSize == 1) {
 			PlaceEmpty (item);
 			return true;
@@ -77,7 +92,13 @@ public class Inventory : MonoBehaviour {
 		return false;
 	}
 
-	public bool PlaceEmpty(Item item) {
+	/// <summary>
+	/// Places the item into an empty slot if stacks are full
+	/// </summary>
+	/// <returns><c>true</c>, if empty was placed, <c>false</c> otherwise.</returns>
+	/// <param name="item">Item.</param>
+	public bool PlaceEmpty (Item item)
+	{
 		if (emptySlots > 0) {
 			foreach (GameObject slot in allSlots) {
 				Slot tmp = slot.GetComponent<Slot> ();
