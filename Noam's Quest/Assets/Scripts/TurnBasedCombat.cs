@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class TurnBasedCombat : MonoBehaviour {
 		
 		//create character and create random variable for accuracy
-		private Character Noam = new Noam();
-		private Character Enemy1 = new Enemy1();
+		public Character Noam = new Noam();
+		public Character Enemy1 = new Enemy1();
 		private int randomAccuracy;
 		private int randomAction = 0;
 		
@@ -109,11 +109,11 @@ public enum FightStates{
 					// If yes, changes state to LOSE
 					currentState = FightStates.PLAYERCHOICE;
 					//If no, changes state to PLAYERCHOICE
-				} else{
+				} else {
 					//Change state to PLAYERCHOICE
 					currentState = FightStates.LOSE;
+				}
 			}
-		}
 			//Block move happens if randomAction variable shuffles 2
 			if (randomAction == 2) {
 				Noam.Dmg = Noam.Dmg - Enemy1.Block;
@@ -128,7 +128,8 @@ public enum FightStates{
 				Enemy1.Dmg = 10;
 				Enemy1.Accuracy = 90;
 			}
-
+			PlayerHpCounter ();
+			Ene
 			break;
 
 		case (FightStates.WIN):
@@ -142,9 +143,13 @@ public enum FightStates{
 
 		}
 
-
-		
-		}
+	}
+		private void PlayerHpCounter() {
+			print (Noam.Hp);
+	}	
+		private void EnemyHpCounter () {
+			print (Enemy1.Hp);
+	}
 
 }
 
