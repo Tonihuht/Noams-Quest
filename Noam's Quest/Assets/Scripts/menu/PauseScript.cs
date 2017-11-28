@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class PauseScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         paused = false;
-        Pausemenu = GameObject.Find("Pausemenu");
+        Pausemenu = GameObject.Find("2");
 		
 	}
 	
@@ -19,14 +20,14 @@ public class PauseScript : MonoBehaviour {
 	void Update () {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            paused = !paused;
+            paused = true;
         }
-        if (paused)
+        if (paused == true)
         {
             Pausemenu.SetActive(true);
             Time.timeScale = 0;
         }
-        else if (!paused)
+        else if (paused == false)
         {
             Pausemenu.SetActive(false);
             Time.timeScale = 1;
@@ -39,7 +40,7 @@ public class PauseScript : MonoBehaviour {
     }
     public void MainMenuB()
     {
-        Application.LoadLevel(1);
+		SceneManager.LoadScene ("1");
     }
     public void SaveButton()
     {
@@ -51,6 +52,7 @@ public class PauseScript : MonoBehaviour {
     }
     public void ExitButton()
     {
+		Debug.Log ("Quit");
         Application.Quit();
     }
 }

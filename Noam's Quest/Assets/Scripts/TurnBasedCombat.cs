@@ -128,8 +128,7 @@ public enum FightStates{
 				Enemy1.Dmg = 10;
 				Enemy1.Accuracy = 90;
 			}
-			PlayerHpCounter ();
-			Ene
+
 			break;
 
 		case (FightStates.WIN):

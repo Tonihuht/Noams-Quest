@@ -275,7 +275,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 264777184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -200.0046, y: 143.21829, z: 0}
+  m_LocalPosition: {x: -200.0046, y: 168.75008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1642638871}
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1912924466}
+      - m_Target: {fileID: 649459731}
         m_MethodName: ResumeButton
         m_Mode: 1
         m_Arguments:
@@ -397,7 +397,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 560564695}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.001739502, y: -75.84314, z: 0}
+  m_LocalPosition: {x: -0.001739502, y: -117.58008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1953606410}
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1912924466}
+      - m_Target: {fileID: 649459731}
         m_MethodName: LoadButton
         m_Mode: 1
         m_Arguments:
@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 649459729}
   - component: {fileID: 649459728}
   - component: {fileID: 649459727}
+  - component: {fileID: 649459731}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -574,6 +575,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649459731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 649459726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1eddda95bf0c5343a7c43c99b9320a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1200063462
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +684,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1202550365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8345947, y: 130.31912, z: 0}
+  m_LocalPosition: {x: -7.8345947, y: 166.7951, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1912924470}
@@ -747,7 +759,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1313723552}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -417.40002, y: -75.84589, z: 0}
+  m_LocalPosition: {x: -417.39996, y: -119.00772, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1200063463}
@@ -798,7 +810,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1912924466}
+      - m_Target: {fileID: 649459731}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -1091,7 +1103,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1851277996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -417.40002, y: 24.153809, z: 0}
+  m_LocalPosition: {x: -417.39996, y: 12.683563, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 51532841}
@@ -1142,7 +1154,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1912924466}
+      - m_Target: {fileID: 649459731}
         m_MethodName: MainMenuB
         m_Mode: 1
         m_Arguments:
@@ -1350,8 +1362,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1912924465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 459.5, y: 202, z: 0}
-  m_LocalScale: {x: 1.14875, y: 1.14875, z: 1.14875}
+  m_LocalPosition: {x: 203.5, y: 114.5, z: 0}
+  m_LocalScale: {x: 0.50875, y: 0.50875, z: 0.50875}
   m_Children:
   - {fileID: 1877488686}
   - {fileID: 1468403187}
@@ -1468,7 +1480,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2059567514}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5640564, y: 24.153572, z: 0}
+  m_LocalPosition: {x: -0.56411743, y: 10.47094, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1510647472}
@@ -1519,7 +1531,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1912924466}
+      - m_Target: {fileID: 649459731}
         m_MethodName: SaveButton
         m_Mode: 1
         m_Arguments:

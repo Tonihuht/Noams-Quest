@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
 	}
 
 	void Update () {
-		if (bLeft.GetButtonPressed ()) {
+		/*if (bLeft.GetButtonPressed ()) {
 			//Debug.Log ("Moving left");
 
 		}
@@ -38,12 +38,16 @@ public class GameController : MonoBehaviour
 		if (bDown.GetButtonPressed ()) {
 			//Debug.Log ("Moving left");
 			player.transform.Translate(0, -0.1f * speed, 0);
+		}*/
+	
 		}
 
-	}
+
+
 
 	// Update is called once per frame
 	void OnCollisionEnter2D (Collision2D col)
+
 	{
 		if (col.gameObject.tag == "Door1") {
 			SceneManager.LoadScene ("Tutorial1");
