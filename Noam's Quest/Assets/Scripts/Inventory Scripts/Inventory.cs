@@ -27,6 +27,7 @@ public class Inventory : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		
 		CreateLayout ();
 	}
 	

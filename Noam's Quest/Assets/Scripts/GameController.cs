@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 	private ButtonController bRight;
 	private ButtonController bUp;
 	private ButtonController bDown;
+	private ButtonController zButton;
 	private GameObject player;
 	public float speed = 0.01f;
 
@@ -20,12 +21,13 @@ public class GameController : MonoBehaviour
 		bRight = GameObject.Find ("RightArrow").GetComponent<ButtonController> ();
 		bUp = GameObject.Find ("UpArrow").GetComponent<ButtonController> ();
 		bDown = GameObject.Find ("DownArrow").GetComponent<ButtonController> ();
+		zButton = GameObject.Find ("ZButton").GetComponent<ButtonController> ();
 	}
 
 	void Update () {
-		/*if (bLeft.GetButtonPressed ()) {
+		if (bLeft.GetButtonPressed ()) {
 			//Debug.Log ("Moving left");
-
+			player.transform.Translate(0.1f * speed, 0, 0);
 		}
 		if (bRight.GetButtonPressed ()) {
 			//Debug.Log ("Moving right");
@@ -38,11 +40,12 @@ public class GameController : MonoBehaviour
 		if (bDown.GetButtonPressed ()) {
 			//Debug.Log ("Moving left");
 			player.transform.Translate(0, -0.1f * speed, 0);
-		}*/
+		}
+		if (zButton.GetButtonPressed ()) {
+			SceneManager.LoadScene ("2");
+		}
 	
 		}
-
-
 
 
 	// Update is called once per frame

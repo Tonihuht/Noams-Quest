@@ -10,6 +10,9 @@ public class PlayerControl : MonoBehaviour {
 	private float moveY;
 	public Inventory inventory;
 
+	void Awake() {
+		DontDestroyOnLoad (gameObject);
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -31,7 +34,7 @@ public class PlayerControl : MonoBehaviour {
 	/// </summary>
 	/// <param name="col">Col.</param>
 	private void OnCollisionEnter2D(Collision2D col) {
-		Debug.Log ("This is an item");
+		Debug.Log ("You bumped into something");
 		if (col.gameObject.tag == "Item") {
 			inventory.AddItem (col.gameObject.GetComponent<Item> ());
 			Destroy (col.gameObject);
