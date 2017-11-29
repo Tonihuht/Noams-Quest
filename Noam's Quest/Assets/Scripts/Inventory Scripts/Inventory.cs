@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
+	public static Inventory current;
+
 	//Instantiates different variables
 	private RectTransform inventoryRect;
 	private float inventoryWidth;
@@ -17,17 +19,21 @@ public class Inventory : MonoBehaviour
 	public GameObject slotPrefab;
 	private List<GameObject> allSlots;
 
-	private static int emptySlots;
+	private int emptySlots;
 
-	public static int EmptySlots {
+	public int EmptySlots {
 		get { return emptySlots; }
 		set { emptySlots = value; }
+	}
+
+	void Awake() {
+		current = this;
+		DontDestroyOnLoad (gameObject);
 	}
 
 	// Use this for initialization
 	void Start ()
 	{
-		
 		CreateLayout ();
 	}
 	

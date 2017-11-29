@@ -133,11 +133,10 @@ public enum FightStates{
 
 		case (FightStates.WIN):
 			SceneManager.LoadScene ("Tutorial1");
-
 			break;	
 
 		case (FightStates.LOSE):
-			SceneManager.LoadScene ("Tutorial1");
+			SceneManager.LoadScene ("Tutorial");
 			break;	
 
 		}

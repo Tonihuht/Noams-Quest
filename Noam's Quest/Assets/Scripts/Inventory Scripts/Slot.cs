@@ -88,7 +88,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 			stackTxt.text = items.Count > 1 ? items.Count.ToString () : string.Empty;
 			if (IsEmpty) {
 				ChangeSprite (slotEmpty, slotHighlighted);
-				Inventory.EmptySlots++;
+				Inventory.current.EmptySlots++;
 			}
 		}
 	}
