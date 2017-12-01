@@ -132,7 +132,8 @@ public enum FightStates{
 			break;
 
 		case (FightStates.WIN):
-			SceneManager.LoadScene ("Tutorial1");
+			SceneManager.LoadScene ( PlayerPrefs.GetInt("TutorialAfterFight") );
+
 			break;	
 
 		case (FightStates.LOSE):

@@ -51,6 +51,7 @@ public class PlayerControl : MonoBehaviour
 		}
 		if (col.gameObject.tag == "JeromeFight") {
 			Destroy (col.gameObject);
+			PlayerPrefs.SetInt ("TutorialAfterFight", SceneManager.GetActiveScene ().buildIndex);
 			Debug.Log ("Destroy");
 			SceneManager.LoadScene ("FightScreen"); 
 			Debug.Log ("Jerome!");
