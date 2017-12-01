@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameDataController : MonoBehaviour
 {
-
+	
+	private int jeromeCount;
 	// Use this for initialization
 	void Start ()
 	{
@@ -16,4 +17,11 @@ public class GameDataController : MonoBehaviour
 	{
 		
 	}
+
+	public int JeromeCount (){
+		{
+			
+	}
+
 }
+

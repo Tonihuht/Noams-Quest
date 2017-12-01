@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
 	private float moveY;
 	public bool facingLeft = false;
 
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -46,15 +47,19 @@ public class PlayerControl : MonoBehaviour
 	// Update is called once per frame
 	void OnCollisionEnter2D (Collision2D col)
 	{
+		
 		if (col.gameObject.tag == "Door1") {
 			SceneManager.LoadScene ("Tutorial1");
 		}
 		if (col.gameObject.tag == "JeromeFight") {
+			
+			if(){
+				SceneManager.LoadScene ("FightScreen");
+			} else {
 			Destroy (col.gameObject);
-			PlayerPrefs.SetInt ("TutorialAfterFight", SceneManager.GetActiveScene ().buildIndex);
-			Debug.Log ("Destroy");
-			SceneManager.LoadScene ("FightScreen"); 
-			Debug.Log ("Jerome!");
+			}
+			//PlayerPrefs.SetInt ("TutorialAfterFight", SceneManager.GetActiveScene ().buildIndex);
+			 
 		}
 		if (col.gameObject.tag == "Potion") {
 			Debug.Log ("AddToInventory");
