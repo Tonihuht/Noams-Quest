@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour
 	private float moveX;
 	private float moveY;
 	public bool facingLeft = false;
-
+	public GameDataController controller;
 
 	// Update is called once per frame
 	void Update ()
@@ -52,15 +52,18 @@ public class PlayerControl : MonoBehaviour
 			SceneManager.LoadScene ("Tutorial1");
 		}
 		if (col.gameObject.tag == "JeromeFight") {
-			
-			if(){
+			Debug.Log (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter);
+			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter++;
+			Debug.Log (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter);
+			if (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter < 2) {
 				SceneManager.LoadScene ("FightScreen");
 			} else {
-			Destroy (col.gameObject);
+				Destroy (col.gameObject);
 			}
-			//PlayerPrefs.SetInt ("TutorialAfterFight", SceneManager.GetActiveScene ().buildIndex);
-			 
 		}
+			PlayerPrefs.SetInt ("TutorialAfterFight", SceneManager.GetActiveScene ().buildIndex);
+
+				
 		if (col.gameObject.tag == "Potion") {
 			Debug.Log ("AddToInventory");
 		}

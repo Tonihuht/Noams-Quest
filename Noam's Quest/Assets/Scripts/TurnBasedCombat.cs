@@ -11,6 +11,7 @@ public class TurnBasedCombat : MonoBehaviour {
 		public Character Enemy1 = new Enemy1();
 		private int randomAccuracy;
 		private int randomAction = 0;
+		public GameDataController controller;
 		
 	// Setup all different states that fight can be in
 public enum FightStates{
@@ -137,6 +138,7 @@ public enum FightStates{
 			break;	
 
 		case (FightStates.LOSE):
+			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter--;
 			SceneManager.LoadScene ("Tutorial");
 			break;	
 

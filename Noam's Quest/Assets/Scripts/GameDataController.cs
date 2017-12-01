@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class GameDataController : MonoBehaviour
 {
-	
-	private int jeromeCount;
-	// Use this for initialization
+	public int jeromeCounter = 0;
+	/*public static GameDataController Instance;
+
+	void Awake ()
+	{
+		if (Instance == null) {
+			DontDestroyOnLoad (gameObject);
+			Instance = this;
+		} else if (Instance != this) {
+			Destroy (gameObject);
+		}
+	}*/
+
+
 	void Start ()
 	{
 		DontDestroyOnLoad (gameObject);
@@ -18,10 +29,6 @@ public class GameDataController : MonoBehaviour
 		
 	}
 
-	public int JeromeCount (){
-		{
-			
-	}
 
 }
 

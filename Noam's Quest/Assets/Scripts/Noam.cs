@@ -10,7 +10,7 @@ public class Noam : Character {
 		Hp = 100;
 		Dmg = 25;
 		Block = 5;
-		Dodge = 40;
+		Dodge = 30;
 		Accuracy = 100;
 }
 }
