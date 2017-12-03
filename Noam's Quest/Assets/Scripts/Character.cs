@@ -9,7 +9,7 @@ using UnityEngine;
 		private string name;
 		private string description;
 		//Stats of character
-		private int hp;
+		public int hp;
 		private int dmg;
 		private int block;
 		private int dodge;
