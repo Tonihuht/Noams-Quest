@@ -51,6 +51,15 @@ public class PlayerControl : MonoBehaviour
 		if (col.gameObject.tag == "Door1") {
 			SceneManager.LoadScene ("Tutorial1");
 		}
+
+		if (col.gameObject.tag == "Door2") {
+			SceneManager.LoadScene ("CrollsCastle");
+		}
+
+		if (col.gameObject.tag == "Door3") {
+			SceneManager.LoadScene ("CrollsCastle2");
+		}
+
 		if (col.gameObject.tag == "JeromeFight") {
 			Debug.Log (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter);
 			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter++;
