@@ -12,26 +12,38 @@ public class GameController : MonoBehaviour
 	private ButtonController bUp;
 	private ButtonController bDown;
 	private ButtonController zButton;
-	//private GameObject player;
+	private ButtonController resumeButton;
+	private GameObject player;
 	public float speed = 0.01f;
 
 	void Start ()
 	{
-		//player = GameObject.FindGameObjectWithTag ("Player");
+		player = GameObject.FindGameObjectWithTag ("Player");
 		bLeft = GameObject.Find ("LeftArrow").GetComponent<ButtonController> ();
 		bRight = GameObject.Find ("RightArrow").GetComponent<ButtonController> ();
 		bUp = GameObject.Find ("UpArrow").GetComponent<ButtonController> ();
 		bDown = GameObject.Find ("DownArrow").GetComponent<ButtonController> ();
 		zButton = GameObject.Find ("ZButton").GetComponent<ButtonController> ();
+		resumeButton = GameObject.Find ("ResumeButton").GetComponent<ButtonController>();
 	}
 
 	void Update ()
 	{
+		if (zButton.GetButtonPressed ()) {
+			PlayerPrefs.SetInt ("TutorialOut", SceneManager.GetActiveScene ().buildIndex);
+			PlayerPrefs.Save ();
+			print (PlayerPrefs.GetInt ("TutorialOut"));
+			SceneManager.LoadScene ("2");
+		}
+		/*if (resumeButton.GetButtonPressed ()) {
+			Debug.Log ("Resume");
+			SceneManager.LoadScene ( PlayerPrefs.GetInt("TutorialOut") );
+		}
 		/*if (bLeft.GetButtonPressed ()) {
-			//Debug.Log ("Moving left");
+			Debug.Log ("Moving left");
 			player.transform.Translate(0.1f * speed, 0, 0);
 		}
-		if (bRight.GetButtonPressed ()) {
+		/*if (bRight.GetButtonPressed ()) {
 			//Debug.Log ("Moving right");
 			player.transform.Translate(0.1f * speed, 0, 0);
 		}

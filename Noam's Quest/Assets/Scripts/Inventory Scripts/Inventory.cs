@@ -28,7 +28,6 @@ public class Inventory : MonoBehaviour
 
 	void Awake() {
 		current = this;
-		DontDestroyOnLoad (gameObject);
 	}
 
 	// Use this for initialization

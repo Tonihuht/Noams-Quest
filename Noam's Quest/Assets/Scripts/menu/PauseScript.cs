@@ -18,7 +18,7 @@ public class PauseScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        /*if(Input.GetKeyDown(KeyCode.Escape))
         {
             paused = true;
         }
@@ -31,12 +31,14 @@ public class PauseScript : MonoBehaviour {
         {
             Pausemenu.SetActive(false);
             Time.timeScale = 1;
-        }
+        }*/
 		
 	}
     public void ResumeButton()
     {
-        paused = false;
+		SceneManager.LoadScene ( PlayerPrefs.GetInt("TutorialOut") );
+
+		paused = false;
     }
     public void MainMenuB()
     {
