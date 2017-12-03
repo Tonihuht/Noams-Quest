@@ -49,9 +49,9 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 	public void ButtonZ () {
 		PlayerPrefs.SetFloat ("PlayerX", player.transform.position.x);
 		PlayerPrefs.SetFloat ("PlayerY", player.transform.position.y);
-		PlayerPrefs.SetInt ("TutorialOut", SceneManager.GetActiveScene ().buildIndex);
+		PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
 		PlayerPrefs.Save ();
-		print (PlayerPrefs.GetInt ("TutorialOut"));
+		print (PlayerPrefs.GetString ("TutorialOut"));
 		SceneManager.LoadScene ("2");
 	}
 }

@@ -36,7 +36,8 @@ public class PauseScript : MonoBehaviour {
 	}
     public void ResumeButton()
     {
-		SceneManager.LoadScene ( PlayerPrefs.GetInt("TutorialOut") );
+		transform.position = new Vector2 (PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"));
+		SceneManager.LoadScene ( PlayerPrefs.GetString("LastLevel") );
 
 		paused = false;
     }

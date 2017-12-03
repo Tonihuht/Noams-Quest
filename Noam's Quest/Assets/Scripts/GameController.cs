@@ -28,12 +28,12 @@ public class GameController : MonoBehaviour
 
 	void Update ()
 	{
-		if (zButton.GetButtonPressed ()) {
+		/*if (zButton.GetButtonPressed ()) {
 			PlayerPrefs.SetFloat ("PlayerX", player.transform.position.x);
 			PlayerPrefs.SetFloat ("PlayerY", player.transform.position.y);
-			PlayerPrefs.SetInt ("TutorialOut", SceneManager.GetActiveScene ().buildIndex);
+			PlayerPrefs.SetString ("TutorialOut", SceneManager.GetActiveScene ().name);
 			PlayerPrefs.Save ();
-			print (PlayerPrefs.GetInt ("TutorialOut"));
+			print (PlayerPrefs.GetString ("TutorialOut"));
 			SceneManager.LoadScene ("2");
 		}
 		/*if (bLeft.GetButtonPressed ()) {
