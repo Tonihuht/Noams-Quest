@@ -12,9 +12,9 @@ public class GameController : MonoBehaviour
 	private ButtonController bUp;
 	private ButtonController bDown;
 	private ButtonController zButton;
-	private ButtonController resumeButton;
 	private GameObject player;
 	public float speed = 0.01f;
+
 
 	void Start ()
 	{
@@ -24,26 +24,23 @@ public class GameController : MonoBehaviour
 		bUp = GameObject.Find ("UpArrow").GetComponent<ButtonController> ();
 		bDown = GameObject.Find ("DownArrow").GetComponent<ButtonController> ();
 		zButton = GameObject.Find ("ZButton").GetComponent<ButtonController> ();
-		resumeButton = GameObject.Find ("ResumeButton").GetComponent<ButtonController>();
 	}
 
 	void Update ()
 	{
 		if (zButton.GetButtonPressed ()) {
+			PlayerPrefs.SetFloat ("PlayerX", player.transform.position.x);
+			PlayerPrefs.SetFloat ("PlayerY", player.transform.position.y);
 			PlayerPrefs.SetInt ("TutorialOut", SceneManager.GetActiveScene ().buildIndex);
 			PlayerPrefs.Save ();
 			print (PlayerPrefs.GetInt ("TutorialOut"));
 			SceneManager.LoadScene ("2");
 		}
-		/*if (resumeButton.GetButtonPressed ()) {
-			Debug.Log ("Resume");
-			SceneManager.LoadScene ( PlayerPrefs.GetInt("TutorialOut") );
-		}
 		/*if (bLeft.GetButtonPressed ()) {
 			Debug.Log ("Moving left");
 			player.transform.Translate(0.1f * speed, 0, 0);
 		}
-		/*if (bRight.GetButtonPressed ()) {
+		if (bRight.GetButtonPressed ()) {
 			//Debug.Log ("Moving right");
 			player.transform.Translate(0.1f * speed, 0, 0);
 		}
