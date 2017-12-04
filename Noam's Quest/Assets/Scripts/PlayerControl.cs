@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PlayerControl : MonoBehaviour
 	private float moveY;
 	public bool facingLeft = false;
 	public GameDataController controller;
+	public Button yourButton;
+
+
 
 	// Update is called once per frame
 	void Update ()
@@ -58,6 +62,26 @@ public class PlayerControl : MonoBehaviour
 
 		if (col.gameObject.tag == "Door3") {
 			SceneManager.LoadScene ("CrollsCastle2");
+		}
+		if (col.gameObject.tag == "Door4") {
+			SceneManager.LoadScene ("Mountain1");
+		}
+
+		if (col.gameObject.tag == "Door5") {
+			SceneManager.LoadScene ("Mountain2");
+		}
+
+		if (col.gameObject.tag == "Door6") {
+			SceneManager.LoadScene ("Bridge");
+		}
+		if (col.gameObject.tag == "Door7") {
+			SceneManager.LoadScene ("DarkForest");
+		}
+		if (col.gameObject.tag == "Tamara") {
+			SceneManager.LoadScene ("TheEnd");
+		}
+		if (col.gameObject.tag == "MainMenu") {
+			SceneManager.LoadScene ("1");
 		}
 
 		if (col.gameObject.tag == "JeromeFight") {

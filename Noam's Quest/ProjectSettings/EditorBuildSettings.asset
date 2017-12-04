@@ -23,3 +23,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2.unity
     guid: 529e3933ec19ac648bb78418efd51f4d
+  - enabled: 1
+    path: Assets/Scenes/CrollsCastle2.unity
+    guid: c65b42706421b6b4cb29f05551671f83
+  - enabled: 1
+    path: Assets/Scenes/Bridge.unity
+    guid: e8f904f056285ce4c9d882e863ca7aa5
+  - enabled: 1
+    path: Assets/Scenes/DarkForest.unity
+    guid: 470fa51212656fd49b62b5401dc7b016
+  - enabled: 1
+    path: Assets/Scenes/Mountain1.unity
+    guid: 84e761a33618e704ca5e196a414469e0
+  - enabled: 1
+    path: Assets/Scenes/Mountain2.unity
+    guid: aa018c911c600f6408868984a20f6efc

@@ -12,6 +12,12 @@ TagManager:
   - Door2
   - Door3
   - MusicPlayer
+  - Door4
+  - Door5
+  - Door6
+  - Door7
+  - Tamara
+  - MainMenu
   layers:
   - Default
   - TransparentFX
