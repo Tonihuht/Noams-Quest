@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 	public GameObject player;
+	public float PlayerX;
+	public float PlayerY;
 	public bool buttonPressed;
 
 	public void Start () {
@@ -47,11 +49,11 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 	}
 
 	public void ButtonZ () {
-		PlayerPrefs.SetFloat ("PlayerX", player.transform.position.x);
-		PlayerPrefs.SetFloat ("PlayerY", player.transform.position.y);
 		PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
+		PlayerPrefs.SetFloat ("PlayerX", transform.position.x);
+		PlayerPrefs.SetFloat ("PlayerY", transform.position.y);
 		PlayerPrefs.Save ();
-		print (PlayerPrefs.GetString ("TutorialOut"));
+		print (PlayerPrefs.GetString ("LastLevel"));
 		SceneManager.LoadScene ("2");
 	}
 }
