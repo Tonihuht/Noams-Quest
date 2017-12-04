@@ -37,24 +37,24 @@ public enum FightStates{
 			//Debug.Log ("resetPlayerStats");
 			//Attack move happens if UpArrow is pushed
 			if (Input.GetKeyDown (KeyCode.UpArrow)) {
-				Debug.Log ("AttackMoveSelected");
+				//Debug.Log ("AttackMoveSelected");
 				//Generate random variable for testing accuracy
 				randomAccuracy = Random.Range (1, 101);
-				Debug.Log (randomAccuracy);
+				//Debug.Log (randomAccuracy);
 				//Compare random variable to Noams accuracy to see if attack hits
 				if (randomAccuracy > 0 && randomAccuracy <= Noam.Accuracy) {
-					Debug.Log ("HIT");
+					//Debug.Log ("HIT");
 					//Does Dmg to enemy
 					Enemy1.Hp = Enemy1.Hp - Noam.Dmg;
 				} 
 				Noam.Dmg = 25;
 				Noam.Accuracy = 100;
-				Debug.Log (Noam.Dmg);
-				Debug.Log (Noam.Accuracy);
+				//Debug.Log (Noam.Dmg);
+				//Debug.Log (Noam.Accuracy);
 				//Checks if the enemy is dead
 				if (Enemy1.Hp > 0) {
 					// If yes, changes state to ENEMYSCHOICE
-					Debug.Log ("Enemyturn");
+					//Debug.Log ("Enemyturn");
 					currentState = FightStates.ENEMYCHOICE;
 					//If no, changes state to WIN
 				} else {
@@ -62,21 +62,21 @@ public enum FightStates{
 				}
 			}
 			if (Input.GetKeyDown (KeyCode.RightArrow)) {
-				Debug.Log ("Block");
+				//Debug.Log ("Block");
 				Enemy1.Dmg = Enemy1.Dmg - Noam.Block;
 				currentState = FightStates.ENEMYCHOICE;
 				Noam.Dmg = 25;
 				Noam.Accuracy = 100;
 			}
 			if (Input.GetKeyDown (KeyCode.LeftArrow)) {
-				Debug.Log ("Dodge");
+				//Debug.Log ("Dodge");
 				Enemy1.Accuracy = Enemy1.Accuracy - Noam.Dodge;
 				currentState = FightStates.ENEMYCHOICE;
 				Noam.Dmg = 25;
 				Noam.Accuracy = 100;
 			}
 			if (Input.GetKeyDown (KeyCode.DownArrow)) {
-				Debug.Log ("Inventory");
+				//Debug.Log ("Inventory");
 				//SceneManager.LoadScene ("InventoryPrototype1");
 				currentState = FightStates.ENEMYCHOICE;
 				Noam.Dmg = 25;
@@ -88,20 +88,18 @@ public enum FightStates{
 			//reset Enemys stats
 			//Debug.Log ("resetEnemyStats");
 			randomAction = Random.Range (1, 4);
-			Debug.Log (randomAction);
+			//Debug.Log (randomAction);
 			//Attack move happens if randomAction variable shuffles 1
 			if (randomAction == 1) {
-				Debug.Log ("EnemyAttackSelected");
-				Debug.Log ("Noams HP" + Noam.Hp);
-				Debug.Log ("Enemy Accuracy" + Enemy1.Accuracy);
-				Debug.Log ("Enemy Dmg" + Enemy1.Dmg);
+				
 				//Generate random variable for testing accuracy
 				randomAccuracy = Random.Range (1, 101);
-				Debug.Log (randomAccuracy);
+				//Debug.Log (randomAccuracy);
 				//Compare random variable to Noams accuracy to see if attack hits
 				if (randomAccuracy > 0 && randomAccuracy <= Enemy1.Accuracy) {
 					//Does Dmg to enemy
 					Noam.Hp = Noam.Hp - Enemy1.Dmg;
+					Debug.Log (Noam.Hp);
 					Enemy1.Dmg = 10;
 					Enemy1.Accuracy = 90;
 				}
@@ -134,12 +132,14 @@ public enum FightStates{
 
 		case (FightStates.WIN):
 			//SceneManager.LoadScene ( PlayerPrefs.GetInt("TutorialAfterFight") );
-			SceneManager.LoadScene (PlayerPrefs.GetString("LastLevel"));
+			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
+			Debug.Log (Noam.Hp);
 			break;	
 
 		case (FightStates.LOSE):
 			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter--;
 			SceneManager.LoadScene ("Tutorial");
+			Debug.Log (Noam.Hp);
 			break;	
 
 		}

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameDataController : MonoBehaviour
 {
 	public int jeromeCounter = 0;
+	public Text hpText;
 	/*public static GameDataController Instance;
 
 	void Awake ()
@@ -26,7 +28,7 @@ public class GameDataController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		
+
 	}
 
 
