@@ -70,7 +70,7 @@ public class PlayerControl : MonoBehaviour
 				Destroy (col.gameObject);
 			}
 		}
-			PlayerPrefs.SetInt ("TutorialAfterFight", SceneManager.GetActiveScene ().buildIndex);
+			PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
 
 				
 		if (col.gameObject.tag == "Potion") {

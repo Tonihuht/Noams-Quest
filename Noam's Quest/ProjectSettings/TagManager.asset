@@ -11,6 +11,7 @@ TagManager:
   - Item
   - Door2
   - Door3
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX
