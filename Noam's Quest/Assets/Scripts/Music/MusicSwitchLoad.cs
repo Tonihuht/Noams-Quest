@@ -13,9 +13,6 @@ public class MusicSwitchLoad : MonoBehaviour {
 		if (newTrack != null) {
 			theMM.ChangeBGM (newTrack);
 		}
-		if (newTrack != theMM.BGM) {
-			theMM.ChangeBGM (newTrack);
-		}
 	}
 	
 	// Update is called once per frame
