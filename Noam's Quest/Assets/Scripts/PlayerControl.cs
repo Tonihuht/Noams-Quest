@@ -9,7 +9,7 @@ public class PlayerControl : MonoBehaviour
 	//Instantiates variables the player uses
 	public int playerSpeed = 5;
 	private float moveX;
-	private float moveY;
+	private float moveY;	
 	public bool facingLeft = false;
 	public GameDataController controller;
 
