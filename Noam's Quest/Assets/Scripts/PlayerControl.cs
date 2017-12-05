@@ -112,10 +112,10 @@ public class PlayerControl : MonoBehaviour
 
 		if (col.gameObject.tag == "JeromeFight") {
 			//GameDataController.SavePosition ();
-			Debug.Log (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter);
-			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter++;
-			Debug.Log (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter);
-			if (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter < 2) {
+			Debug.Log (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter);
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter++;
+			Debug.Log (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter);
+			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter < 2) {
 				SceneManager.LoadScene ("FightScreenJerome");
 			} else {
 				Destroy (col.gameObject);

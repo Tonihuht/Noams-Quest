@@ -24,6 +24,7 @@ TagManager:
   - AbraFight1
   - AbraFight2
   - EnemyFight1
+  - InventoryCanvas
   layers:
   - Default
   - TransparentFX

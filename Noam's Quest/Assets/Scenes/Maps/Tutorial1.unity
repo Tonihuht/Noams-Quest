@@ -983,7 +983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &481581076
 Transform:
   m_ObjectHideFlags: 0
@@ -1008,8 +1008,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438267330c8da3c40bc9998bc22b0149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jeromeCounter: 0
   hpText: {fileID: 0}
+  jeromeCounter: 0
+  crollCounter1: 0
+  crollCounter2: 0
+  abraCounter1: 0
+  abraCounter2: 0
+  enemyCounter1: 0
 --- !u!1 &502574543
 GameObject:
   m_ObjectHideFlags: 0
