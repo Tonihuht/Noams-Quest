@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-	
+	public Character noam;
 	/*private ButtonController bLeft;
 	private ButtonController bRight;
 	private ButtonController bUp;
@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour
 
 	void Start ()
 	{
+		DontDestroyOnLoad (gameObject);
+		noam = new Noam ();
 		/*player = GameObject.FindGameObjectWithTag ("Player");
 		bLeft = GameObject.Find ("LeftArrow").GetComponent<ButtonController> ();
 		bRight = GameObject.Find ("RightArrow").GetComponent<ButtonController> ();

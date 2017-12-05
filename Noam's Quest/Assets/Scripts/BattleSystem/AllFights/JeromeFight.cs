@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class JeromeFight : MonoBehaviour {
 		
 		//create character and create random variable for accuracy
-		public Character Noam = new Noam();
+		public Character Noam;
 		public Character Jerome = new Jerome();
 		private int randomAccuracy;
 		private int randomAction = 0;
@@ -28,6 +28,10 @@ public enum FightStates{
 
 	void Start () {
 		currentState = FightStates.PLAYERCHOICE;
+		Noam = GameObject.Find ("GameController").GetComponent<GameController> ().noam;
+//		Slot slot = GameObject.Find ("Inventory").GetComponent<Inventory> ().slotPrefab.GetComponent<Slot> ();
+//		Debug.Log (slot);
+//		slot.SetNoam (Noam);
 	}
 
 	void Update () {
