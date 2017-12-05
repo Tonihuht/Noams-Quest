@@ -101,8 +101,8 @@ public class EnemyFight : MonoBehaviour {
 					Noam.Hp = Noam.Hp - Enemy1.Dmg;
 				}
 				//resets Enemy1 Damage(dmg) and accuracy to original value
-				Enemy1.Dmg = 25;
-				Enemy1.Accuracy = 100;
+				Enemy1.Dmg = 20;
+				Enemy1.Accuracy = 90;
 				//Checks if the player is alive
 				if (Noam.Hp > 0) {
 					// If yes, changes state to PLAYERCHOISE
@@ -119,8 +119,8 @@ public class EnemyFight : MonoBehaviour {
 				//changes fightstate to PLAYERCHOICE
 				//resets Enemy1 Dmg and accuracy statistics to original values
 				currentState = FightStates.PLAYERCHOICE;
-				Enemy1.Dmg = 25;
-				Enemy1.Accuracy = 100;
+				Enemy1.Dmg = 20;
+				Enemy1.Accuracy = 90;
 			}
 			//Dodge move happens if randomAction variable shuffles 5
 			if (randomAction == 5) {
@@ -129,8 +129,8 @@ public class EnemyFight : MonoBehaviour {
 				//changes fightstate to PLAYERCHOICE
 				//resets Enemy1 Dmg and accuracy statistics to original values
 				currentState = FightStates.PLAYERCHOICE;
-				Enemy1.Dmg = 25;
-				Enemy1.Accuracy = 100;
+				Enemy1.Dmg = 20;
+				Enemy1.Accuracy = 90;
 			}
 
 			/*
@@ -163,8 +163,8 @@ public class EnemyFight : MonoBehaviour {
 		case (FightStates.LOSE):
 			Debug.Log ("LOSE");
 			//you lost
-			//Decreases jeromeCounter by 1 so you have to fight him again
-			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter--;
+			//Decreases enemyCounter1 by 1 so you have to fight him again
+			GameObject.Find ("enemyCounter1").GetComponent<GameDataController> ().enemyCounter1--;
 			//loads first map
 			SceneManager.LoadScene ("Tutorial");
 			break;	

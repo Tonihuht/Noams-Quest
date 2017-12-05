@@ -90,6 +90,25 @@ public class PlayerControl : MonoBehaviour
 			SceneManager.LoadScene ("MainMenu");
 		}
 
+		if (col.gameObject.tag == "CrollFight1") {
+			SceneManager.LoadScene ("FightScreenCroll1");
+		}
+
+		if (col.gameObject.tag == "CrollFight2") {
+			SceneManager.LoadScene ("FightScreenCroll2");
+		}
+
+		if (col.gameObject.tag == "AbraFight1") {
+			SceneManager.LoadScene ("FightScreenAbra1");
+		}
+
+		if (col.gameObject.tag == "AbraFight2") {
+			SceneManager.LoadScene ("FightScreenAbra2");
+		}
+
+		if (col.gameObject.tag == "EnemyFight1") {
+			SceneManager.LoadScene ("FightScreenEnemy");
+		}
 
 		if (col.gameObject.tag == "JeromeFight") {
 			//GameDataController.SavePosition ();

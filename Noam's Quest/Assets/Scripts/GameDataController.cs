@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class GameDataController : MonoBehaviour
 {	
-	public int jeromeCounter = 0;
+	
 	public Text hpText;
+	public int jeromeCounter = 0;
+	public int crollCounter1 = 0;
+	public int crollCounter2 = 0;
+	public int abraCounter1 = 0;
+	public int abraCounter2 = 0;
+	public int enemyCounter1 = 0;
 
 	/*public static GameDataController Instance;
 

@@ -101,8 +101,8 @@ public class AbraFight : MonoBehaviour {
 					Noam.Hp = Noam.Hp - Abra.Dmg;
 				}
 				//resets Abra Damage(dmg) and accuracy to original value
-				Abra.Dmg = 25;
-				Abra.Accuracy = 100;
+				Abra.Dmg = 35;
+				Abra.Accuracy = 110;
 				//Checks if the player is alive
 				if (Noam.Hp > 0) {
 					// If yes, changes state to PLAYERCHOISE
@@ -119,8 +119,8 @@ public class AbraFight : MonoBehaviour {
 				//changes fightstate to PLAYERCHOICE
 				//resets Abra Dmg and accuracy statistics to original values
 				currentState = FightStates.PLAYERCHOICE;
-				Abra.Dmg = 25;
-				Abra.Accuracy = 100;
+				Abra.Dmg = 35;
+				Abra.Accuracy = 110;
 			}
 			//Dodge move happens if randomAction variable shuffles 5
 			if (randomAction == 5) {
@@ -129,8 +129,8 @@ public class AbraFight : MonoBehaviour {
 				//changes fightstate to PLAYERCHOICE
 				//resets Abra Dmg and accuracy statistics to original values
 				currentState = FightStates.PLAYERCHOICE;
-				Abra.Dmg = 25;
-				Abra.Accuracy = 100;
+				Abra.Dmg = 35;
+				Abra.Accuracy = 110;
 			}
 
 			/*
@@ -163,11 +163,11 @@ public class AbraFight : MonoBehaviour {
 		case (FightStates.LOSE):
 			Debug.Log ("LOSE");
 			//you lost
-			//Decreases jeromeCounter by 1 so you have to fight him again
-			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter--;
+			//Decreases abraCounter by 1 so you have to fight him again
+			GameObject.Find ("abraCounter1").GetComponent<GameDataController> ().abraCounter1--;
 			//loads first map
 			SceneManager.LoadScene ("Tutorial");
-			break;	
+			break;
 
 		}
 

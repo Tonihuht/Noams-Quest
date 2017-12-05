@@ -19,6 +19,11 @@ TagManager:
   - Tamara
   - MainMenu
   - Door0
+  - CrollFight1
+  - CrollFight2
+  - AbraFight1
+  - AbraFight2
+  - EnemyFight1
   layers:
   - Default
   - TransparentFX
