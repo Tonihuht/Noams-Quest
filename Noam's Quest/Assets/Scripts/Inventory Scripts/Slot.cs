@@ -89,6 +89,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 		if (!IsEmpty) {
 			items.Pop ().Use ();
 			stackTxt.text = items.Count > 1 ? items.Count.ToString () : string.Empty;
+			Noam.Hp += 20;
+			Debug.Log ("Your health: " + Noam.Hp);
 			if (IsEmpty) {
 				ChangeSprite (slotEmpty, slotHighlighted);
 				Inventory.current.EmptySlots++;
@@ -104,8 +106,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	{
 		if (eventData.button == PointerEventData.InputButton.Right) {
 			UseItem ();
-			Noam.Hp += 20;
-			Debug.Log ("Your health: " + Noam.Hp);
 		}
 	}
 }
