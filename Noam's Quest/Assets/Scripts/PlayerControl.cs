@@ -91,23 +91,48 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		if (col.gameObject.tag == "CrollFight1") {
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter1++;
+			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter1 < 2) {
 			SceneManager.LoadScene ("FightScreenCroll1");
+			} else {
+				Destroy (col.gameObject);
+			}
 		}
 
 		if (col.gameObject.tag == "CrollFight2") {
-			SceneManager.LoadScene ("FightScreenCroll2");
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter2++;
+			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter2 < 2) {
+				SceneManager.LoadScene ("FightScreenCroll2");
+			} else {
+				Destroy (col.gameObject);
+			}
 		}
 
 		if (col.gameObject.tag == "AbraFight1") {
-			SceneManager.LoadScene ("FightScreenAbra1");
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter1++;
+			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter1 < 2) {
+				SceneManager.LoadScene ("FightScreenAbra1");
+			} else {
+				Destroy (col.gameObject);
+			}
 		}
 
 		if (col.gameObject.tag == "AbraFight2") {
-			SceneManager.LoadScene ("FightScreenAbra2");
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter2++;
+			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter2 < 2) {
+				SceneManager.LoadScene ("FightScreenAbra2");
+			} else {
+				Destroy (col.gameObject);
+			}
 		}
 
 		if (col.gameObject.tag == "EnemyFight1") {
-			SceneManager.LoadScene ("FightScreenEnemy");
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1++;
+			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1 < 2) {
+				SceneManager.LoadScene ("FightScreenEnemy");
+			} else {
+				Destroy (col.gameObject);
+			}
 		}
 
 		if (col.gameObject.tag == "JeromeFight") {

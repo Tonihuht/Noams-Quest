@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class AbraFight : MonoBehaviour {
+public class AbraFight1 : MonoBehaviour {
 
 	//create character and create random variable for accuracy
 	public Character Noam = new Noam();
