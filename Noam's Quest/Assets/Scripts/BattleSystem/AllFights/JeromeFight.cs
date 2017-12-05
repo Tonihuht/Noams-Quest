@@ -132,7 +132,7 @@ public enum FightStates{
 				Jerome.Dmg = 25;
 				Jerome.Accuracy = 100;
 			}
-
+			Debug.Log (Noam.Hp);
 			/*
 			Debug.Log (Noam.Name);
 			Debug.Log (Noam.Description);

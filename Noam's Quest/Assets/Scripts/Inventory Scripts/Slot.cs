@@ -11,6 +11,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	public Text stackTxt;
 	public Sprite slotEmpty;
 	public Sprite slotHighlighted;
+	public Noam noam;
 
 	/// <summary>
 	/// Gets a value indicating whether the slot is empty or not.
@@ -101,6 +102,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	{
 		if (eventData.button == PointerEventData.InputButton.Right) {
 			UseItem ();
+			noam.Hp = noam.Hp + 20;
+			Debug.Log (noam.Hp);
 		}
 	}
 }

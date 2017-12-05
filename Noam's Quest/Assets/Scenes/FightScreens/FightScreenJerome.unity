@@ -195,8 +195,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 230143376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 181.5, y: 102, z: 0}
-  m_LocalScale: {x: 0.45375, y: 0.45375, z: 0.45375}
+  m_LocalPosition: {x: 233.5, y: 131.5, z: 0}
+  m_LocalScale: {x: 0.58375, y: 0.58375, z: 0.58375}
   m_Children:
   - {fileID: 1684363924}
   - {fileID: 1130194595}
@@ -781,7 +781,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1340150633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 360, y: -154.79338, z: 0}
+  m_LocalPosition: {x: 360, y: -155.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 454927268}
@@ -1165,7 +1165,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1668387313}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 260, y: -124.79338, z: 0}
+  m_LocalPosition: {x: 260, y: -125.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 1867153963}
@@ -1320,7 +1320,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1684363923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -242.10002, y: 203.2, z: 0}
+  m_LocalPosition: {x: -107.3, y: 203.19997, z: 0}
   m_LocalScale: {x: 1.4, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 230143380}
@@ -1328,7 +1328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -242.1, y: 203.2}
+  m_AnchoredPosition: {x: -107.3, y: 203.19997}
   m_SizeDelta: {x: 214.6, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684363925
@@ -1583,7 +1583,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2000642315}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160, y: -154.79338, z: 0}
+  m_LocalPosition: {x: 160, y: -155.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 932377389}
