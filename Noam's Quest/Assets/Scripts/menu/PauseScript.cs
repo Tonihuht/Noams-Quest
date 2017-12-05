@@ -8,7 +8,7 @@ public class PauseScript : MonoBehaviour
 {
 
 	GameObject Pausemenu;
-	//bool paused;
+	bool paused;
 
 	// Use this for initialization
 	void Start ()
