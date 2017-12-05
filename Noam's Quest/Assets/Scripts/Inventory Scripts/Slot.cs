@@ -109,6 +109,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 		if (eventData.button == PointerEventData.InputButton.Right) {
 			UseItem ();
 			Debug.Log (noam);
+			noam.Hp += 20;
+			Debug.Log (noam.Hp);
 		}
 	}
 }
