@@ -9,7 +9,7 @@ public class PlayerControl : MonoBehaviour
 	//Instantiates variables the player uses
 	public int playerSpeed = 5;
 	private float moveX;
-	private float moveY;	
+	private float moveY;
 	public bool facingLeft = false;
 	public GameDataController controller;
 
@@ -102,7 +102,7 @@ public class PlayerControl : MonoBehaviour
 				Destroy (col.gameObject);
 			}
 		}
-			PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
+		PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
 
 				
 		if (col.gameObject.tag == "Potion") {
@@ -118,7 +118,9 @@ public class PlayerControl : MonoBehaviour
 			Destroy (col.gameObject);
 		}
 	}
-	void Buttons () {
+
+	void Buttons ()
+	{
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			SceneManager.LoadScene ("PauseMenu");
 		}

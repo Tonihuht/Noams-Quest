@@ -4,18 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class JeromeFight : MonoBehaviour {
+public class JeromeFight : MonoBehaviour
+{
 		
-		//create character and create random variable for accuracy
-		public Character Noam;
-		public Character Jerome = new Jerome();
-		private int randomAccuracy;
-		private int randomAction = 0;
-		public GameDataController controller;
+	//create character and create random variable for accuracy
+	public Character Noam;
+	public Character Jerome = new Jerome ();
+	private int randomAccuracy;
+	private int randomAction = 0;
+	public GameDataController controller;
 		
 		
 	// Setup all different states that fight can be in
-public enum FightStates{
+	public enum FightStates
+	{
 		PLAYERCHOICE,
 		ENEMYCHOICE,
 		LOSE,
@@ -26,15 +28,14 @@ public enum FightStates{
 
 
 
-	void Start () {
+	void Start ()
+	{
 		currentState = FightStates.PLAYERCHOICE;
 		Noam = GameObject.Find ("GameController").GetComponent<GameController> ().noam;
-//		Slot slot = GameObject.Find ("Inventory").GetComponent<Inventory> ().slotPrefab.GetComponent<Slot> ();
-//		Debug.Log (slot);
-//		slot.SetNoam (Noam);
 	}
 
-	void Update () {
+	void Update ()
+	{
 		
 		switch (currentState) {
 		//Players move
@@ -136,7 +137,7 @@ public enum FightStates{
 				Jerome.Dmg = 25;
 				Jerome.Accuracy = 100;
 			}
-			Debug.Log (Noam.Hp);
+			Debug.Log ("Your health: " + Noam.Hp);
 			/*
 			Debug.Log (Noam.Name);
 			Debug.Log (Noam.Description);
@@ -176,7 +177,7 @@ public enum FightStates{
 		}
 
 	}
-		/*private void PlayerHpCounter() {
+	/*private void PlayerHpCounter() {
 			print (Noam.Hp);
 	}	
 		private void EnemyHpCounter () {

@@ -26,7 +26,8 @@ public class Inventory : MonoBehaviour
 		set { emptySlots = value; }
 	}
 
-	void Awake() {
+	void Awake ()
+	{
 		current = this;
 	}
 

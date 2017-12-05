@@ -4,21 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PauseScript : MonoBehaviour {
+public class PauseScript : MonoBehaviour
+{
 
-    GameObject Pausemenu;
-    bool paused;
+	GameObject Pausemenu;
+	//bool paused;
 
 	// Use this for initialization
-	void Start () {
-        paused = false;
-        Pausemenu = GameObject.Find("2");
+	void Start ()
+	{
+		paused = false;
+		Pausemenu = GameObject.Find ("2");
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        /*if(Input.GetKeyDown(KeyCode.Escape))
+	void Update ()
+	{
+		/*if(Input.GetKeyDown(KeyCode.Escape))
         {
             paused = true;
         }
@@ -34,27 +37,32 @@ public class PauseScript : MonoBehaviour {
         }*/
 		
 	}
-    public void ResumeButton()
-    {
-		transform.position = new Vector2 (PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"));
-		SceneManager.LoadScene ( PlayerPrefs.GetString("LastLevel") );
+
+	public void ResumeButton ()
+	{
+		transform.position = new Vector2 (PlayerPrefs.GetFloat ("PlayerX"), PlayerPrefs.GetFloat ("PlayerY"));
+		SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 
 		paused = false;
-    }
-    public void MainMenuB()
-    {
-		SceneManager.LoadScene ("MainMenu");
-    }
-    public void SaveButton()
-    {
-    }
-    public void LoadButton()
-    {
-		SceneManager.LoadScene (PlayerPrefs.GetString("LastLevel"));
 	}
-    public void ExitButton()
-    {
+
+	public void MainMenuB ()
+	{
+		SceneManager.LoadScene ("MainMenu");
+	}
+
+	public void SaveButton ()
+	{
+	}
+
+	public void LoadButton ()
+	{
+		SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
+	}
+
+	public void ExitButton ()
+	{
 		Debug.Log ("Quit");
-        Application.Quit();
-    }
+		Application.Quit ();
+	}
 }

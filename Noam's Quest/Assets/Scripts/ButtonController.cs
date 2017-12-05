@@ -11,7 +11,8 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 	public float PlayerY;
 	public bool buttonPressed;
 
-	public void Start () {
+	public void Start ()
+	{
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
@@ -32,23 +33,28 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 		this.buttonPressed = false;
 	}
 
-	public void ButtonLeft () {
+	public void ButtonLeft ()
+	{
 		player.transform.Translate (-0.5f, 0, 0);
 	}
 
-	public void ButtonRight () {
-		player.transform.Translate(0.5f , 0, 0);
+	public void ButtonRight ()
+	{
+		player.transform.Translate (0.5f, 0, 0);
 	}
 
-	public void ButtonUp () {
-		player.transform.Translate(0, 0.5f, 0);
+	public void ButtonUp ()
+	{
+		player.transform.Translate (0, 0.5f, 0);
 	}
 
-	public void ButtonDown () {
-		player.transform.Translate(0, -0.5f, 0);
+	public void ButtonDown ()
+	{
+		player.transform.Translate (0, -0.5f, 0);
 	}
 
-	public void ButtonZ () {
+	public void ButtonZ ()
+	{
 		PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
 		PlayerPrefs.SetFloat ("PlayerX", transform.position.x);
 		PlayerPrefs.SetFloat ("PlayerY", transform.position.y);

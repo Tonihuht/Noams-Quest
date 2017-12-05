@@ -11,11 +11,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	public Text stackTxt;
 	public Sprite slotEmpty;
 	public Sprite slotHighlighted;
-	public Character noam;
-
-	public void SetNoam (Character noam) {
-		this.noam = noam;
-	}
+	public Character Noam;
 
 	/// <summary>
 	/// Gets a value indicating whether the slot is empty or not.
@@ -54,7 +50,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 		stackTxt.resizeTextMinSize = txtScaleFactor;
 		txtRect.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, slotRect.sizeDelta.y);
 		txtRect.SetSizeWithCurrentAnchors (RectTransform.Axis.Horizontal, slotRect.sizeDelta.x);
-		noam = GameObject.Find ("GameController").GetComponent<GameController> ().noam;
+		Noam = GameObject.Find ("GameController").GetComponent<GameController> ().noam;
 
 	}
 
@@ -108,9 +104,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	{
 		if (eventData.button == PointerEventData.InputButton.Right) {
 			UseItem ();
-			Debug.Log (noam);
-			noam.Hp += 20;
-			Debug.Log (noam.Hp);
+			Noam.Hp += 20;
+			Debug.Log ("Your health: " + Noam.Hp);
 		}
 	}
 }
