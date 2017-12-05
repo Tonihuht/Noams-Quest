@@ -10,6 +10,9 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 	public float PlayerX;
 	public float PlayerY;
 	public bool buttonPressed;
+	public int movingX;
+	public int movingY;
+	public float moveSpeed = 1f;
 
 	public void Start ()
 	{
@@ -35,21 +38,26 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
 	public void ButtonLeft ()
 	{
-		player.transform.Translate (-0.5f, 0, 0);
+		movingX = -1;
+		Input.GetAxis ("Horizontal");
 	}
 
 	public void ButtonRight ()
 	{
-		player.transform.Translate (0.5f, 0, 0);
+		movingX = 1;
+		Input.GetAxis ("Horizontal");
+		//player.transform.Translate (0.5f, 0, 0);
 	}
 
 	public void ButtonUp ()
 	{
+		movingY = 1;
 		player.transform.Translate (0, 0.5f, 0);
 	}
 
 	public void ButtonDown ()
 	{
+		movingY = -1;
 		player.transform.Translate (0, -0.5f, 0);
 	}
 
