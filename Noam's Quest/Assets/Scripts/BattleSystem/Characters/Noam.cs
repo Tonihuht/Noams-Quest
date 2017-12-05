@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Noam : Character {
-
+	
 	public Noam(){
 		Name = "Noam";
 		Description = "Gnome hero!";
@@ -13,5 +13,4 @@ public class Noam : Character {
 		Dodge = 30;
 		Accuracy = 100;
 }
-
 }
