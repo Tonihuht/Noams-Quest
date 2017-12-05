@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameDataController : MonoBehaviour
 {	
-	public static int jeromeCounter = 0;
+	public int jeromeCounter = 0;
 	public Text hpText;
 
 	/*public static GameDataController Instance;
