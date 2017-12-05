@@ -97,7 +97,7 @@ public class PlayerControl : MonoBehaviour
 			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter++;
 			Debug.Log (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter);
 			if (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter < 2) {
-				SceneManager.LoadScene ("FightScreen");
+				SceneManager.LoadScene ("FightScreenJerome");
 			} else {
 				Destroy (col.gameObject);
 			}
