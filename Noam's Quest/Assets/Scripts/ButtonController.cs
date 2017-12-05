@@ -54,6 +54,6 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 		PlayerPrefs.SetFloat ("PlayerY", transform.position.y);
 		PlayerPrefs.Save ();
 		print (PlayerPrefs.GetString ("LastLevel"));
-		SceneManager.LoadScene ("2");
+		SceneManager.LoadScene ("PauseMenu");
 	}
 }

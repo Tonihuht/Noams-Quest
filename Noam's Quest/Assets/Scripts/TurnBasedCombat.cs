@@ -13,6 +13,7 @@ public class TurnBasedCombat : MonoBehaviour {
 		private int randomAction = 0;
 		public GameDataController controller;
 		
+		
 	// Setup all different states that fight can be in
 public enum FightStates{
 		PLAYERCHOICE,
@@ -30,6 +31,7 @@ public enum FightStates{
 	}
 
 	void Update () {
+		
 		switch (currentState) {
 		//Players move
 		case (FightStates.PLAYERCHOICE):
@@ -133,10 +135,12 @@ public enum FightStates{
 		case (FightStates.WIN):
 			//SceneManager.LoadScene ( PlayerPrefs.GetInt("TutorialAfterFight") );
 			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
+			//GameDataController.LoadPosition ();
 			Debug.Log (Noam.Hp);
 			break;	
 
 		case (FightStates.LOSE):
+			
 			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter--;
 			SceneManager.LoadScene ("Tutorial");
 			Debug.Log (Noam.Hp);

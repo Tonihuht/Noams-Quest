@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameDataController : MonoBehaviour
-{
+{	
 	public int jeromeCounter = 0;
 	public Text hpText;
+
 	/*public static GameDataController Instance;
 
 	void Awake ()
@@ -21,7 +22,7 @@ public class GameDataController : MonoBehaviour
 
 
 	void Start ()
-	{
+	{	
 		DontDestroyOnLoad (gameObject);
 	}
 	
@@ -31,6 +32,20 @@ public class GameDataController : MonoBehaviour
 
 	}
 
+	/*public void LoadPosition () {
+
+		transform.position = new Vector3(PlayerPrefs.GetFloat ("x"), PlayerPrefs.GetFloat ("y"), PlayerPrefs.GetFloat ("z"));
+		transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+		SavePosition ();
+	}
+
+	public void SavePosition(){
+
+		PlayerPrefs.SetFloat ("x", transform.position.x);
+		PlayerPrefs.SetFloat ("y", transform.position.y);
+		PlayerPrefs.SetFloat ("z", transform.position.z);
+
+	}*/
 
 }
 

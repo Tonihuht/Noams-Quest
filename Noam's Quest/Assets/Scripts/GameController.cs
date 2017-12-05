@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
 			PlayerPrefs.SetString ("TutorialOut", SceneManager.GetActiveScene ().name);
 			PlayerPrefs.Save ();
 			print (PlayerPrefs.GetString ("TutorialOut"));
-			SceneManager.LoadScene ("2");
+			SceneManager.LoadScene ("PauseMenu");
 		}
 		/*if (bLeft.GetButtonPressed ()) {
 			Debug.Log ("Moving left");
@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
 			player.transform.Translate(0, -0.1f * speed, 0);
 		}
 		if (zButton.GetButtonPressed ()) {
-			SceneManager.LoadScene ("2");
+			SceneManager.LoadScene ("PauseMenu");
 		}*/
 	
 	}

@@ -38,3 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mountain2.unity
     guid: aa018c911c600f6408868984a20f6efc
+  - enabled: 1
+    path: Assets/Scenes/TheEnd.unity
+    guid: 2b095d4a1396e42429c03ac75ae7a986

@@ -13,4 +13,5 @@ public class Noam : Character {
 		Dodge = 30;
 		Accuracy = 100;
 }
+
 }

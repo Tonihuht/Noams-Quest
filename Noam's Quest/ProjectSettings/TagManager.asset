@@ -18,6 +18,7 @@ TagManager:
   - Door7
   - Tamara
   - MainMenu
+  - Door0
   layers:
   - Default
   - TransparentFX

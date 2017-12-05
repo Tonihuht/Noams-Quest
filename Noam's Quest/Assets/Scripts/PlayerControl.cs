@@ -12,14 +12,13 @@ public class PlayerControl : MonoBehaviour
 	private float moveY;
 	public bool facingLeft = false;
 	public GameDataController controller;
-	public Button yourButton;
-
 
 
 	// Update is called once per frame
 	void Update ()
 	{
 		PlayerMoves ();
+		Buttons ();
 	}
 
 	/// <summary>
@@ -51,7 +50,10 @@ public class PlayerControl : MonoBehaviour
 	// Update is called once per frame
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		
+		if (col.gameObject.tag == "Door0") {
+			SceneManager.LoadScene ("Tutorial");
+		}
+
 		if (col.gameObject.tag == "Door1") {
 			SceneManager.LoadScene ("Tutorial1");
 		}
@@ -63,6 +65,7 @@ public class PlayerControl : MonoBehaviour
 		if (col.gameObject.tag == "Door3") {
 			SceneManager.LoadScene ("CrollsCastle2");
 		}
+
 		if (col.gameObject.tag == "Door4") {
 			SceneManager.LoadScene ("Mountain1");
 		}
@@ -74,17 +77,22 @@ public class PlayerControl : MonoBehaviour
 		if (col.gameObject.tag == "Door6") {
 			SceneManager.LoadScene ("Bridge");
 		}
+
 		if (col.gameObject.tag == "Door7") {
 			SceneManager.LoadScene ("DarkForest");
 		}
+
 		if (col.gameObject.tag == "Tamara") {
 			SceneManager.LoadScene ("TheEnd");
 		}
+
 		if (col.gameObject.tag == "MainMenu") {
-			SceneManager.LoadScene ("1");
+			SceneManager.LoadScene ("MainMenu");
 		}
 
+
 		if (col.gameObject.tag == "JeromeFight") {
+			//GameDataController.SavePosition ();
 			Debug.Log (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter);
 			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter++;
 			Debug.Log (GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter);
@@ -99,13 +107,20 @@ public class PlayerControl : MonoBehaviour
 				
 		if (col.gameObject.tag == "Potion") {
 			Debug.Log ("AddToInventory");
+			Destroy (col.gameObject);
 		}
 		if (col.gameObject.tag == "KeyItem") {
 			Debug.Log ("AddToKeyItems");
+			Destroy (col.gameObject);
 		}
 		if (col.gameObject.tag == "Item") {
 			Inventory.current.AddItem (col.gameObject.GetComponent<Item> ());
 			Destroy (col.gameObject);
+		}
+	}
+	void Buttons () {
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			SceneManager.LoadScene ("PauseMenu");
 		}
 	}
 }
