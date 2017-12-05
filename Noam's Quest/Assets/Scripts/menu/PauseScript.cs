@@ -47,12 +47,11 @@ public class PauseScript : MonoBehaviour {
     }
     public void SaveButton()
     {
-        PlayerPrefs.SetInt("currentscenesave", Application.loadedLevel);
     }
     public void LoadButton()
     {
-        Application.LoadLevel(PlayerPrefs.GetInt("currentscenesave"));
-    }
+		SceneManager.LoadScene (PlayerPrefs.GetString("LastLevel"));
+	}
     public void ExitButton()
     {
 		Debug.Log ("Quit");
