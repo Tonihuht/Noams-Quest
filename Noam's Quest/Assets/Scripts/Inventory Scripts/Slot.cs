@@ -104,7 +104,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	/// <param name="eventData">Event data.</param>
 	public void OnPointerClick (PointerEventData eventData)
 	{
-		if (eventData.button == PointerEventData.InputButton.Right) {
+		if (eventData.button == PointerEventData.InputButton.Left) {
 			UseItem ();
 		}
 	}

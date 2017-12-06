@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
 	private float moveY;
 	public bool facingLeft = false;
 	public GameDataController controller;
+	public bool door1 = false;
 
 
 	// Update is called once per frame
@@ -59,7 +60,9 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		if (col.gameObject.tag == "Door2") {
-			SceneManager.LoadScene ("CrollsCastle");
+			if (door1 == true) {
+				SceneManager.LoadScene ("CrollsCastle");
+				}
 		}
 
 		if (col.gameObject.tag == "Door3") {
@@ -156,11 +159,12 @@ public class PlayerControl : MonoBehaviour
 
 				
 		if (col.gameObject.tag == "Potion") {
-			Debug.Log ("AddToInventory");
+			Inventory.current.AddItem (col.gameObject.GetComponent<Item> ());
 			Destroy (col.gameObject);
 		}
 		if (col.gameObject.tag == "KeyItem") {
-			Debug.Log ("AddToKeyItems");
+			door1 = true;
+			Inventory.current.AddItem (col.gameObject.GetComponent<Item> ());
 			Destroy (col.gameObject);
 		}
 		if (col.gameObject.tag == "Item") {
