@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
 	private float moveY;
 	public bool facingLeft = false;
 	public GameDataController controller;
+	bool pause = false;
 
 
 	// Update is called once per frame
@@ -141,7 +142,9 @@ public class PlayerControl : MonoBehaviour
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter++;
 			Debug.Log (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter);
 			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter < 2) {
-				SceneManager.LoadScene ("FightScreenJerome");
+				Time.timeScale = 0;
+				SceneManager.LoadScene ("FightScreenJerome",LoadSceneMode.Additive);
+					
 			} else {
 				Destroy (col.gameObject);
 			}
