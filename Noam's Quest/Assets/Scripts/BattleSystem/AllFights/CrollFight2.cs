@@ -156,8 +156,8 @@ public class CrollFight2 : MonoBehaviour {
 		case (FightStates.WIN):
 			Debug.Log ("WIN!");
 			//you won !
-			//Loads last map played before fight screen
-			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
+			SceneManager.UnloadSceneAsync ("FightScreenCroll2");
+			Time.timeScale = 1;
 			break;	
 
 		case (FightStates.LOSE):
@@ -167,6 +167,7 @@ public class CrollFight2 : MonoBehaviour {
 			GameObject.Find ("crollCounter2").GetComponent<GameDataController> ().crollCounter2--;
 			//loads first map
 			SceneManager.LoadScene ("Tutorial");
+			Time.timeScale = 1;
 			break;	
 
 		}

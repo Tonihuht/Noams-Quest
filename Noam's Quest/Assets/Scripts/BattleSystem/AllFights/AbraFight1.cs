@@ -156,8 +156,8 @@ public class AbraFight1 : MonoBehaviour {
 		case (FightStates.WIN):
 			Debug.Log ("WIN!");
 			//you won !
-			//Loads last map played before fight screen
-			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
+			SceneManager.UnloadSceneAsync ("FightScreenAbra1");
+			Time.timeScale = 1;
 			break;	
 
 		case (FightStates.LOSE):
@@ -167,6 +167,7 @@ public class AbraFight1 : MonoBehaviour {
 			GameObject.Find ("abraCounter1").GetComponent<GameDataController> ().abraCounter1--;
 			//loads first map
 			SceneManager.LoadScene ("Tutorial");
+			Time.timeScale = 1;
 			break;
 
 		}

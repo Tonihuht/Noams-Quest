@@ -163,7 +163,6 @@ public class JeromeFight : MonoBehaviour
 			//you won !
 			//Loads last map played before fight screen
 			SceneManager.UnloadSceneAsync ("FightScreenJerome");
-			//SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
 			break;	
 

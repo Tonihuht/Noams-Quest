@@ -156,8 +156,8 @@ public class EnemyFight : MonoBehaviour {
 		case (FightStates.WIN):
 			Debug.Log ("WIN!");
 			//you won !
-			//Loads last map played before fight screen
-			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
+			SceneManager.UnloadSceneAsync ("FightScreenEnemy");
+			Time.timeScale = 1;
 			break;	
 
 		case (FightStates.LOSE):
@@ -167,6 +167,7 @@ public class EnemyFight : MonoBehaviour {
 			GameObject.Find ("enemyCounter1").GetComponent<GameDataController> ().enemyCounter1--;
 			//loads first map
 			SceneManager.LoadScene ("Tutorial");
+			Time.timeScale = 1;
 			break;	
 
 		}
