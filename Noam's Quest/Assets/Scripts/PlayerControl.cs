@@ -12,11 +12,14 @@ public class PlayerControl : MonoBehaviour
 	private float moveY;
 	public bool facingLeft = false;
 	public GameDataController controller;
+	public CanvasToggler canvasT;
 	public bool door1 = false;
 	public bool bridgeDoor1 = false;
 	public bool bridgeDoor2 = false;
 
-
+	void Start () {
+		canvasT = GameObject.Find ("CanvasButton").GetComponent<CanvasToggler> ();
+	}
 	// Update is called once per frame
 	void Update ()
 	{
@@ -165,6 +168,7 @@ public class PlayerControl : MonoBehaviour
 			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter < 2) {
 				Time.timeScale = 0;
 				SceneManager.LoadSceneAsync ("FightScreenJerome",LoadSceneMode.Additive);
+				canvasT.ToggleCanvas();
 			} else {
 				Destroy (col.gameObject);
 			}

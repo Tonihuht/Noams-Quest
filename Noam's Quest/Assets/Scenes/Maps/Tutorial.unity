@@ -1360,7 +1360,7 @@ GameObject:
   - component: {fileID: 913159993}
   m_Layer: 0
   m_Name: Potion1
-  m_TagString: Item
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1506,7 +1506,7 @@ GameObject:
   - component: {fileID: 1003653219}
   m_Layer: 0
   m_Name: Potion1 (1)
-  m_TagString: Item
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2246,6 +2246,10 @@ MonoBehaviour:
   playerSpeed: 5
   facingLeft: 0
   controller: {fileID: 0}
+  canvasT: {fileID: 0}
+  door1: 0
+  bridgeDoor1: 0
+  bridgeDoor2: 0
 --- !u!212 &1198311988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3420,6 +3424,9 @@ MonoBehaviour:
   PlayerX: 0
   PlayerY: 0
   buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1
 --- !u!1 &2053329683
 GameObject:
   m_ObjectHideFlags: 0

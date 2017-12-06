@@ -13,6 +13,7 @@ public class JeromeFight : MonoBehaviour
 	private int randomAccuracy;
 	private int randomAction = 0;
 	public GameDataController controller;
+	public CanvasToggler canvasT;
 		
 		
 	// Setup all different states that fight can be in
@@ -32,6 +33,7 @@ public class JeromeFight : MonoBehaviour
 	{
 		currentState = FightStates.PLAYERCHOICE;
 		Noam = GameObject.Find ("GameController").GetComponent<GameController> ().noam;
+		canvasT = GameObject.Find ("CanvasButton").GetComponent<CanvasToggler> ();
 	}
 
 	void Update ()
@@ -164,6 +166,7 @@ public class JeromeFight : MonoBehaviour
 			//Loads last map played before fight screen
 			SceneManager.UnloadSceneAsync ("FightScreenJerome");
 			Time.timeScale = 1;
+			canvasT.ToggleCanvas();
 			break;	
 
 		case (FightStates.LOSE):
