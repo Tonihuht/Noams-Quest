@@ -25,6 +25,10 @@ TagManager:
   - AbraFight2
   - EnemyFight1
   - InventoryCanvas
+  - BridgeKeyItem1
+  - BridgeKeyItem2
+  - BridgeDoor1
+  - BridgeDoor2
   layers:
   - Default
   - TransparentFX

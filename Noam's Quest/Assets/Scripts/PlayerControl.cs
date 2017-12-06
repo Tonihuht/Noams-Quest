@@ -13,6 +13,8 @@ public class PlayerControl : MonoBehaviour
 	public bool facingLeft = false;
 	public GameDataController controller;
 	public bool door1 = false;
+	public bool bridgeDoor1 = false;
+	public bool bridgeDoor2 = false;
 
 
 	// Update is called once per frame
@@ -51,6 +53,18 @@ public class PlayerControl : MonoBehaviour
 	// Update is called once per frame
 	void OnCollisionEnter2D (Collision2D col)
 	{
+		if (col.gameObject.tag == "BridgeDoor1") {
+			if (bridgeDoor1 == true) {
+				Destroy (col.gameObject);
+			}
+		}
+
+		if (col.gameObject.tag == "BridgeDoor2") {
+			if (bridgeDoor2 == true) {
+				Destroy (col.gameObject);
+			}
+		}
+
 		if (col.gameObject.tag == "Door0") {
 			SceneManager.LoadScene ("Tutorial");
 		}
@@ -162,11 +176,24 @@ public class PlayerControl : MonoBehaviour
 			Inventory.current.AddItem (col.gameObject.GetComponent<Item> ());
 			Destroy (col.gameObject);
 		}
+		if (col.gameObject.tag == "BridgeKeyItem1") {
+			bridgeDoor1 = true;
+			Inventory.current.AddItem (col.gameObject.GetComponent<Item> ());
+			Destroy (col.gameObject);
+		}
+
+		if (col.gameObject.tag == "BridgeKeyItem2") {
+			bridgeDoor2 = true;
+			Inventory.current.AddItem (col.gameObject.GetComponent<Item> ());
+			Destroy (col.gameObject);
+		}
+
 		if (col.gameObject.tag == "KeyItem") {
 			door1 = true;
 			Inventory.current.AddItem (col.gameObject.GetComponent<Item> ());
 			Destroy (col.gameObject);
 		}
+
 		if (col.gameObject.tag == "Item") {
 			Inventory.current.AddItem (col.gameObject.GetComponent<Item> ());
 			Destroy (col.gameObject);
