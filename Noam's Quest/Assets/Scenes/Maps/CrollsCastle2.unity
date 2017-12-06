@@ -337,7 +337,6 @@ GameObject:
   - component: {fileID: 573672198}
   - component: {fileID: 573672197}
   - component: {fileID: 573672196}
-  - component: {fileID: 573672195}
   - component: {fileID: 573672194}
   m_Layer: 0
   m_Name: Player
@@ -361,17 +360,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.15044327, y: -0.37723008}
   m_Size: {x: 1.5472028, y: 5.0252542}
   m_Direction: 0
---- !u!114 &573672195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 573672193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee7f4c72467288c44a9622f8b0c49536, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &573672196
 Rigidbody2D:
   serializedVersion: 4
@@ -589,6 +577,9 @@ MonoBehaviour:
   PlayerX: 0
   PlayerY: 0
   buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1
 --- !u!114 &704870025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,7 +770,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1209068750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 303.5, y: 170.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1583261180}
@@ -917,7 +908,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1583261179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -303.5, y: 170.5, z: 0}
+  m_LocalPosition: {x: -50, y: 50, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1209068756}
