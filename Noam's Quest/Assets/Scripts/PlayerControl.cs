@@ -157,6 +157,7 @@ public class PlayerControl : MonoBehaviour
 				SceneManager.LoadSceneAsync ("FightScreenEnemy",LoadSceneMode.Additive);
 			} else {
 				Destroy (col.gameObject);
+				GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1-=2;
 			}
 		}
 
