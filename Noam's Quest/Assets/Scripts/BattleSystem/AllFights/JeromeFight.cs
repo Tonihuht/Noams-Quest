@@ -162,7 +162,9 @@ public class JeromeFight : MonoBehaviour
 			Debug.Log ("WIN!");
 			//you won !
 			//Loads last map played before fight screen
-			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
+			SceneManager.UnloadSceneAsync ("FightScreenJerome");
+			//SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
+			Time.timeScale = 1;
 			break;	
 
 		case (FightStates.LOSE):
@@ -172,6 +174,7 @@ public class JeromeFight : MonoBehaviour
 			GameObject.Find ("jeromeCounter").GetComponent<GameDataController> ().jeromeCounter--;
 			//loads first map
 			SceneManager.LoadScene ("Tutorial");
+			Time.timeScale = 1;
 			break;	
 
 		}
