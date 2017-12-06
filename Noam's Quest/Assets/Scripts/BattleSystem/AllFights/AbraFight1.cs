@@ -7,11 +7,15 @@ using UnityEngine.SceneManagement;
 public class AbraFight1 : MonoBehaviour {
 
 	//create character and create random variable for accuracy
-	public Character Noam = new Noam();
+	public Character Noam;
 	public Character Abra = new Abra();
 	private int randomAccuracy;
 	private int randomAction = 0;
 	public GameDataController controller;
+	public ButtonController bAttack;
+	public ButtonController bDodge;
+	public ButtonController bBlock;
+	public CanvasToggler canvasT;
 
 
 	// Setup all different states that fight can be in
@@ -28,6 +32,12 @@ public class AbraFight1 : MonoBehaviour {
 
 	void Start () {
 		currentState = FightStates.PLAYERCHOICE;
+		Noam = GameObject.Find ("GameController").GetComponent<GameController> ().noam;
+		canvasT = GameObject.Find ("CanvasButton").GetComponent<CanvasToggler> ();
+		bAttack = GameObject.Find ("AttackButton").GetComponent<ButtonController> ();
+		bDodge = GameObject.Find ("DodgeButton").GetComponent<ButtonController> ();
+		bBlock = GameObject.Find ("BlockButton").GetComponent<ButtonController> ();
+
 	}
 
 	void Update () {
@@ -36,7 +46,7 @@ public class AbraFight1 : MonoBehaviour {
 		//Players move
 		case (FightStates.PLAYERCHOICE):
 			//Attack move happens if UpArrow is pushed
-			if (Input.GetKeyDown (KeyCode.UpArrow)) {
+			if (Input.GetKeyDown (KeyCode.UpArrow) || bAttack.GetButtonPressed()) {
 				//Generate random variable for testing accuracy
 				randomAccuracy = Random.Range (1, 101);
 				//Compare random variable to Noams accuracy to see if attack hits
@@ -57,7 +67,7 @@ public class AbraFight1 : MonoBehaviour {
 				}
 			}
 			// if RightArrow key is pushed player performs a block action
-			if (Input.GetKeyDown (KeyCode.RightArrow)) {
+			if (Input.GetKeyDown (KeyCode.RightArrow) ||bBlock.GetButtonPressed()) {
 				//Block action decreases enemys damage (dmg) statistic
 				Abra.Dmg = Abra.Dmg - Noam.Block;
 				//switches to Enemys turn and resets Noams Damage(dmg) and accuracy to original value
@@ -66,7 +76,7 @@ public class AbraFight1 : MonoBehaviour {
 				Noam.Accuracy = 100;
 			}
 			// if LeftArrow key is pushed player performs a dodge action
-			if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+			if (Input.GetKeyDown (KeyCode.LeftArrow) || bDodge.GetButtonPressed()) {
 				//Dodge action decreases enemys accuracy statistic
 				Abra.Accuracy = Abra.Accuracy - Noam.Dodge;
 				//switches to Enemys turn and resets Noams Damage(dmg) and accuracy to original value
@@ -164,8 +174,9 @@ public class AbraFight1 : MonoBehaviour {
 			Debug.Log ("LOSE");
 			//you lost
 			//Decreases abraCounter by 1 so you have to fight him again
-			GameObject.Find ("abraCounter1").GetComponent<GameDataController> ().abraCounter1--;
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter1--;
 			//loads first map
+			SceneManager.UnloadSceneAsync ("FightScreenAbra1");
 			SceneManager.LoadScene ("Tutorial");
 			Time.timeScale = 1;
 			break;

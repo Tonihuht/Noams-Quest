@@ -17,6 +17,7 @@ public class MainM : MonoBehaviour {
 
     public void PlayButton()
     {
+		Destroy (GameObject.FindGameObjectWithTag ("InventoryCanvas"));
 		SceneManager.LoadScene ("Tutorial");
     }
 

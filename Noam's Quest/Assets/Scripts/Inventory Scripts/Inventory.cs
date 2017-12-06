@@ -34,6 +34,7 @@ public class Inventory : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		DontDestroyOnLoad (gameObject);
 		CreateLayout ();
 	}
 	

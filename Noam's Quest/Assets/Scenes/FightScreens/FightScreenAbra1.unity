@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 110412704}
   - component: {fileID: 110412703}
   - component: {fileID: 110412702}
+  - component: {fileID: 110412706}
   m_Layer: 0
   m_Name: DodgeButton
   m_TagString: Untagged
@@ -211,7 +212,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 110412700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160, y: -154.94714, z: 0}
+  m_LocalPosition: {x: 160, y: -155.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 2053733535}
@@ -342,6 +343,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &110412706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 110412700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  PlayerX: 0
+  PlayerY: 0
+  buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1
 --- !u!1 &178473517
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +527,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  bAttack: {fileID: 0}
+  bDodge: {fileID: 0}
+  bBlock: {fileID: 0}
+  canvasT: {fileID: 0}
 --- !u!1 &235815422
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +602,7 @@ GameObject:
   - component: {fileID: 429766310}
   - component: {fileID: 429766309}
   - component: {fileID: 429766308}
+  - component: {fileID: 429766312}
   m_Layer: 0
   m_Name: BlockButton
   m_TagString: Untagged
@@ -593,7 +617,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429766306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 360, y: -154.94714, z: 0}
+  m_LocalPosition: {x: 360, y: -155.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 673292981}
@@ -724,6 +748,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &429766312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429766306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  PlayerX: 0
+  PlayerY: 0
+  buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1
 --- !u!1 &463289189
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +778,7 @@ GameObject:
   - component: {fileID: 463289193}
   - component: {fileID: 463289192}
   - component: {fileID: 463289191}
+  - component: {fileID: 463289195}
   m_Layer: 0
   m_Name: AttackButton
   m_TagString: Untagged
@@ -750,7 +793,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 463289189}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 260, y: -124.94714, z: 0}
+  m_LocalPosition: {x: 260, y: -125.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 1040976403}
@@ -881,6 +924,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &463289195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 463289189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  PlayerX: 0
+  PlayerY: 0
+  buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1
 --- !u!1 &521344439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,8 +1489,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1738526753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 473, y: 266, z: 0}
-  m_LocalScale: {x: 1.1825, y: 1.1825, z: 1.1825}
+  m_LocalPosition: {x: 233.5, y: 131.5, z: 0}
+  m_LocalScale: {x: 0.58375, y: 0.58375, z: 0.58375}
   m_Children:
   - {fileID: 2123661755}
   - {fileID: 1874961939}

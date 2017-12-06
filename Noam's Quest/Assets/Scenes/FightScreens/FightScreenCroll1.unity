@@ -475,7 +475,7 @@ Transform:
   - {fileID: 587639820}
   - {fileID: 1754687515}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &512734071
 GameObject:
@@ -690,8 +690,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 541314742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 473, y: 266, z: 0}
-  m_LocalScale: {x: 1.1825, y: 1.1825, z: 1.1825}
+  m_LocalPosition: {x: 233.5, y: 131.5, z: 0}
+  m_LocalScale: {x: 0.58375, y: 0.58375, z: 0.58375}
   m_Children:
   - {fileID: 17892023}
   - {fileID: 1145104126}
@@ -699,7 +699,7 @@ RectTransform:
   - {fileID: 2012238846}
   - {fileID: 545783728}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -718,6 +718,7 @@ GameObject:
   - component: {fileID: 545783731}
   - component: {fileID: 545783730}
   - component: {fileID: 545783729}
+  - component: {fileID: 545783733}
   m_Layer: 0
   m_Name: DodgeButton
   m_TagString: Untagged
@@ -732,7 +733,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 545783727}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160, y: -154.94714, z: 0}
+  m_LocalPosition: {x: 160, y: -155.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 345264052}
@@ -863,6 +864,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &545783733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545783727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  PlayerX: 0
+  PlayerY: 0
+  buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1
 --- !u!1 &587639819
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,6 +967,7 @@ GameObject:
   - component: {fileID: 827991188}
   - component: {fileID: 827991187}
   - component: {fileID: 827991186}
+  - component: {fileID: 827991190}
   m_Layer: 0
   m_Name: AttackButton
   m_TagString: Untagged
@@ -962,7 +982,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827991184}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 260, y: -124.94714, z: 0}
+  m_LocalPosition: {x: 260, y: -125.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 199406150}
@@ -1093,6 +1113,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &827991190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 827991184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  PlayerX: 0
+  PlayerY: 0
+  buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1
 --- !u!1 &1084720445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,6 +1507,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  bAttack: {fileID: 0}
+  bDodge: {fileID: 0}
+  bBlock: {fileID: 0}
+  canvasT: {fileID: 0}
 --- !u!1 &1754640427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,7 +1769,7 @@ Transform:
   m_Children:
   - {fileID: 1084720446}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2012238845
 GameObject:
@@ -1741,6 +1783,7 @@ GameObject:
   - component: {fileID: 2012238849}
   - component: {fileID: 2012238848}
   - component: {fileID: 2012238847}
+  - component: {fileID: 2012238851}
   m_Layer: 0
   m_Name: BlockButton
   m_TagString: Untagged
@@ -1755,7 +1798,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2012238845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 360, y: -154.94714, z: 0}
+  m_LocalPosition: {x: 360, y: -155.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 1102013869}
@@ -1886,3 +1929,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &2012238851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012238845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  PlayerX: 0
+  PlayerY: 0
+  buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1

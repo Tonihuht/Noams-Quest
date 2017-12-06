@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 859787277}
   - component: {fileID: 859787276}
   - component: {fileID: 859787275}
+  - component: {fileID: 859787279}
   m_Layer: 0
   m_Name: AttackButton
   m_TagString: Untagged
@@ -502,7 +503,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 859787273}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 260, y: -124.94714, z: 0}
+  m_LocalPosition: {x: 260, y: -125.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 1433040192}
@@ -633,6 +634,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &859787279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859787273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  PlayerX: 0
+  PlayerY: 0
+  buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1
 --- !u!1 &865847410
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +850,7 @@ GameObject:
   - component: {fileID: 1067165720}
   - component: {fileID: 1067165719}
   - component: {fileID: 1067165718}
+  - component: {fileID: 1067165722}
   m_Layer: 0
   m_Name: DodgeButton
   m_TagString: Untagged
@@ -845,7 +865,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1067165716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160, y: -154.94714, z: 0}
+  m_LocalPosition: {x: 160, y: -155.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 354578860}
@@ -976,6 +996,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1067165722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1067165716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  PlayerX: 0
+  PlayerY: 0
+  buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1
 --- !u!1 &1101831911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,8 +1218,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1434653382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 473, y: 266, z: 0}
-  m_LocalScale: {x: 1.1825, y: 1.1825, z: 1.1825}
+  m_LocalPosition: {x: 233.5, y: 131.5, z: 0}
+  m_LocalScale: {x: 0.58375, y: 0.58375, z: 0.58375}
   m_Children:
   - {fileID: 535543226}
   - {fileID: 526525961}
@@ -1208,6 +1246,7 @@ GameObject:
   - component: {fileID: 1497283051}
   - component: {fileID: 1497283050}
   - component: {fileID: 1497283049}
+  - component: {fileID: 1497283053}
   m_Layer: 0
   m_Name: BlockButton
   m_TagString: Untagged
@@ -1222,7 +1261,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1497283047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 360, y: -154.94714, z: 0}
+  m_LocalPosition: {x: 360, y: -155.26767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.2128546}
   m_Children:
   - {fileID: 1595352200}
@@ -1353,6 +1392,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1497283053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1497283047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d47cd4adea7e5a44a2e3e6b64f95135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  PlayerX: 0
+  PlayerY: 0
+  buttonPressed: 0
+  movingX: 0
+  movingY: 0
+  moveSpeed: 1
 --- !u!1 &1595352199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1577,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  bAttack: {fileID: 0}
+  bDodge: {fileID: 0}
+  bBlock: {fileID: 0}
+  canvasT: {fileID: 0}
 --- !u!1 &1791147803
 GameObject:
   m_ObjectHideFlags: 0
