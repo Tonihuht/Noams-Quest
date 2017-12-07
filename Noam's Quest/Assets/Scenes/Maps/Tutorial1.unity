@@ -2434,7 +2434,7 @@ MonoBehaviour:
   playerSpeed: 3
   facingLeft: 0
   controller: {fileID: 481581077}
-  speed: 0.1
+  speed: 0.05
   canvasT: {fileID: 0}
   door1: 0
   bridgeDoor1: 0

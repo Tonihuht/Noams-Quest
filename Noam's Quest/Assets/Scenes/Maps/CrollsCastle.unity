@@ -1460,7 +1460,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -1.4320974}
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   playerSpeed: 3
   facingLeft: 0
   controller: {fileID: 0}
-  speed: 0.1
+  speed: 0.05
   canvasT: {fileID: 0}
   door1: 0
   bridgeDoor1: 0
