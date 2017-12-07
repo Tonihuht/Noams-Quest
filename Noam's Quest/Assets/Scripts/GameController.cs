@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour
 			print (PlayerPrefs.GetString ("TutorialOut"));
 			SceneManager.LoadScene ("PauseMenu");
 		}
-		/*if (bLeft.GetButtonPressed ()) {
+		if (bLeft.GetButtonPressed ()) {
 			Debug.Log ("Moving left");
 			player.transform.Translate(0.1f * speed, 0, 0);
 		}

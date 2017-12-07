@@ -173,6 +173,7 @@ public class CrollFight2 : MonoBehaviour {
 			//you won !
 			SceneManager.UnloadSceneAsync ("FightScreenCroll2");
 			Time.timeScale = 1;
+			canvasT.ToggleCanvas();
 			break;	
 
 		case (FightStates.LOSE):

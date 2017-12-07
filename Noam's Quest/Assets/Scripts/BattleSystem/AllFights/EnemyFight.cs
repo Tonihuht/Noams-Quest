@@ -169,6 +169,7 @@ public class EnemyFight : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1++;
 			SceneManager.UnloadSceneAsync ("FightScreenEnemy");
 			Time.timeScale = 1;
+			canvasT.ToggleCanvas();
 			break;	
 
 		case (FightStates.LOSE):

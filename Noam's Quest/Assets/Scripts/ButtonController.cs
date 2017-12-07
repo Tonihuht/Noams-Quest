@@ -10,8 +10,6 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 	public float PlayerX;
 	public float PlayerY;
 	public bool buttonPressed;
-	public int movingX;
-	public int movingY;
 	public float moveSpeed = 1f;
 
 	public void Start ()
@@ -36,7 +34,7 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 		this.buttonPressed = false;
 	}
 
-	public void ButtonLeft ()
+	/*public void ButtonLeft ()
 	{
 		movingX = -1;
 		Input.GetAxis ("Horizontal");
@@ -69,5 +67,5 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 		PlayerPrefs.Save ();
 		print (PlayerPrefs.GetString ("LastLevel"));
 		SceneManager.LoadScene ("PauseMenu");
-	}
+	}*/
 }

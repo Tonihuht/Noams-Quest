@@ -12,17 +12,60 @@ public class PlayerControl : MonoBehaviour
 	private float moveY;
 	public bool facingLeft = false;
 	public GameDataController controller;
+	private ButtonController bLeft;
+	private ButtonController bRight;
+	private ButtonController bUp;
+	private ButtonController bDown;
+	private ButtonController zButton;
+	private GameObject player;
+	public float speed = 0.1f;
 	public CanvasToggler canvasT;
 	public bool door1 = false;
 	public bool bridgeDoor1 = false;
 	public bool bridgeDoor2 = false;
 
 	void Start () {
+		player = GameObject.FindGameObjectWithTag ("Player");
+		bLeft = GameObject.Find ("LeftArrow").GetComponent<ButtonController> ();
+		bRight = GameObject.Find ("RightArrow").GetComponent<ButtonController> ();
+		bUp = GameObject.Find ("UpArrow").GetComponent<ButtonController> ();
+		bDown = GameObject.Find ("DownArrow").GetComponent<ButtonController> ();
+		zButton = GameObject.Find ("ZButton").GetComponent<ButtonController> ();
 		canvasT = GameObject.Find ("CanvasButton").GetComponent<CanvasToggler> ();
 	}
 	// Update is called once per frame
 	void Update ()
 	{
+		if (zButton.GetButtonPressed ()) {
+			PlayerPrefs.SetFloat ("PlayerX", player.transform.position.x);
+			PlayerPrefs.SetFloat ("PlayerY", player.transform.position.y);
+			PlayerPrefs.SetString ("TutorialOut", SceneManager.GetActiveScene ().name);
+			PlayerPrefs.Save ();
+			print (PlayerPrefs.GetString ("TutorialOut"));
+			SceneManager.LoadScene ("PauseMenu");
+		}
+		if (bLeft.GetButtonPressed ()) {
+			//Debug.Log ("Moving left");
+			player.transform.Translate(-1f * speed, 0, 0);
+			if (facingLeft == false) {
+				FlipPlayer ();
+			}
+		}
+		if (bRight.GetButtonPressed ()) {
+			//Debug.Log ("Moving right");
+			player.transform.Translate (1f * speed, 0, 0);
+			if (facingLeft == true) {
+				FlipPlayer ();
+			}
+		}
+		if (bUp.GetButtonPressed ()) {
+			//Debug.Log ("Moving left");
+			player.transform.Translate(0, 1f * speed, 0);
+		}
+		if (bDown.GetButtonPressed ()) {
+			//Debug.Log ("Moving left");
+			player.transform.Translate(0, -1f * speed, 0);
+		}
 		PlayerMoves ();
 		Buttons ();
 	}

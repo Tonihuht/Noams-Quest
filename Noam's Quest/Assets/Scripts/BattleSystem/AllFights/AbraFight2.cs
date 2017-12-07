@@ -167,6 +167,7 @@ public class AbraFight2 : MonoBehaviour {
 			//you won !
 			SceneManager.UnloadSceneAsync ("FightScreenAbra2");
 			Time.timeScale = 1;
+			canvasT.ToggleCanvas();
 			break;	
 
 		case (FightStates.LOSE):
