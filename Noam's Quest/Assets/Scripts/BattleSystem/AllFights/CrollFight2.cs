@@ -176,7 +176,7 @@ public class CrollFight2 : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter2--;
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenCroll2");
-			SceneManager.LoadScene ("Tutorial");
+			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
 			break;	
 

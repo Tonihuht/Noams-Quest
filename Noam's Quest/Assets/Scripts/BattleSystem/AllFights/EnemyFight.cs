@@ -176,7 +176,7 @@ public class EnemyFight : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1--;
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenEnemy");
-			SceneManager.LoadScene ("Tutorial");
+			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
 			break;	
 

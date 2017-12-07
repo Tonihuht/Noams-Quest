@@ -182,7 +182,7 @@ public class JeromeFight : MonoBehaviour
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter--;
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenJerome");
-			SceneManager.LoadScene ("Tutorial1");
+			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
 			break;	
 

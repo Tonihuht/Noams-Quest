@@ -19,7 +19,6 @@ public class Item : MonoBehaviour
 
 	void Start () {
 		Noam = GameObject.Find ("GameController").GetComponent<GameController> ().noam;
-
 	}
 	// Use this for initialization
 	public void Use ()

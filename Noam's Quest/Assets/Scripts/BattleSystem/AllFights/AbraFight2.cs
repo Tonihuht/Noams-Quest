@@ -176,7 +176,7 @@ public class AbraFight2 : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter2--;
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenAbra2");
-			SceneManager.LoadScene ("Tutorial");
+			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
 			break;	
 

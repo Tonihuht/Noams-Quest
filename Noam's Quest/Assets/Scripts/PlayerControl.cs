@@ -114,7 +114,9 @@ public class PlayerControl : MonoBehaviour
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter1++;
 			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter1 < 2) {
 				Time.timeScale = 0;
+				PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
 				SceneManager.LoadSceneAsync ("FightScreenCroll1",LoadSceneMode.Additive);
+				canvasT.ToggleCanvas();
 			} else {
 				Destroy (col.gameObject);
 			}
@@ -124,7 +126,9 @@ public class PlayerControl : MonoBehaviour
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter2++;
 			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter2 < 2) {
 				Time.timeScale = 0;
+				PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
 				SceneManager.LoadSceneAsync ("FightScreenCroll2",LoadSceneMode.Additive);
+				canvasT.ToggleCanvas();
 			} else {
 				Destroy (col.gameObject);
 			}
@@ -134,7 +138,9 @@ public class PlayerControl : MonoBehaviour
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter1++;
 			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter1 < 2) {
 				Time.timeScale = 0;
+				PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
 				SceneManager.LoadSceneAsync ("FightScreenAbra1",LoadSceneMode.Additive);
+				canvasT.ToggleCanvas();
 			} else {
 				Destroy (col.gameObject);
 			}
@@ -144,7 +150,9 @@ public class PlayerControl : MonoBehaviour
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter2++;
 			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter2 < 2) {
 				Time.timeScale = 0;
+				PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
 				SceneManager.LoadSceneAsync ("FightScreenAbra2",LoadSceneMode.Additive);
+				canvasT.ToggleCanvas();
 			} else {
 				Destroy (col.gameObject);
 			}
@@ -154,7 +162,9 @@ public class PlayerControl : MonoBehaviour
 			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1++;
 			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1 < 2) {
 				Time.timeScale = 0;
+				PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
 				SceneManager.LoadSceneAsync ("FightScreenEnemy",LoadSceneMode.Additive);
+				canvasT.ToggleCanvas();
 			} else {
 				Destroy (col.gameObject);
 				GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1-=2;
@@ -168,14 +178,13 @@ public class PlayerControl : MonoBehaviour
 			Debug.Log (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter);
 			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter < 2) {
 				Time.timeScale = 0;
+				PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
 				SceneManager.LoadSceneAsync ("FightScreenJerome",LoadSceneMode.Additive);
 				canvasT.ToggleCanvas();
 			} else {
 				Destroy (col.gameObject);
 			}
 		}
-		PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
-
 				
 		if (col.gameObject.tag == "Potion") {
 			Inventory.current.AddItem (col.gameObject.GetComponent<Item> ());
