@@ -178,6 +178,7 @@ public class CrollFight1 : MonoBehaviour {
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenCroll1");
 			Time.timeScale = 1;
+			canvasT.ToggleCanvas();
 			break;	
 
 		}

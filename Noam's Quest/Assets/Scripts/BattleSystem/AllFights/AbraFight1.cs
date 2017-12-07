@@ -179,6 +179,7 @@ public class AbraFight1 : MonoBehaviour {
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenAbra1");
 			Time.timeScale = 1;
+			canvasT.ToggleCanvas();
 			Noam.Hp = 20;
 			break;
 
