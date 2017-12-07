@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 	public Character noam;
+	//public Text playersHp;
+	//public Text pickedPotions;
+	//public int pickPotion;
+	//public int noamsHP;
 	/*private ButtonController bLeft;
 	private ButtonController bRight;
 	private ButtonController bUp;
@@ -17,10 +21,15 @@ public class GameController : MonoBehaviour
 
 
 	void Start ()
-	{
+	{	
+		
 		DontDestroyOnLoad (gameObject);
 		noam = new Noam ();
-		/*player = GameObject.FindGameObjectWithTag ("Player");
+		/*noamsHP = noam.Hp;
+		playersHp.text = "Noams hp: " + noamsHP;
+		pickedPotions.text = "Total potions -> " + pickPotion;
+		pickPotion = 0;
+		player = GameObject.FindGameObjectWithTag ("Player");
 		bLeft = GameObject.Find ("LeftArrow").GetComponent<ButtonController> ();
 		bRight = GameObject.Find ("RightArrow").GetComponent<ButtonController> ();
 		bUp = GameObject.Find ("UpArrow").GetComponent<ButtonController> ();
@@ -30,6 +39,8 @@ public class GameController : MonoBehaviour
 
 	void Update ()
 	{
+		//playersHp.text = "Noams hp: " + noamsHP;
+		//playersHp.text = "Noams hp: " + noamsHP;
 		/*if (zButton.GetButtonPressed ()) {
 			PlayerPrefs.SetFloat ("PlayerX", player.transform.position.x);
 			PlayerPrefs.SetFloat ("PlayerY", player.transform.position.y);
@@ -59,4 +70,12 @@ public class GameController : MonoBehaviour
 		}*/
 	
 	}
+	/*public int totalPotions (Collision2D col){
+		if (col.gameObject.tag == "Potion") {
+			pickPotion++;
+			return pickPotion;
+		} else { 
+			return pickPotion;
+		}
+	}*/
 }
