@@ -122,6 +122,7 @@ public class JeromeFight : MonoBehaviour
 					currentState = FightStates.PLAYERCHOICE;
 					//If no, changes state to LOSE
 				} else {
+					Debug.Log ("Lose");
 					currentState = FightStates.LOSE;
 				}
 			}
@@ -176,14 +177,16 @@ public class JeromeFight : MonoBehaviour
 			break;	
 
 		case (FightStates.LOSE):
-			Debug.Log ("LOSE");
+			Debug.Log ("LOSELOSE");
 			//you lost
 			//Decreases jeromeCounter by 1 so you have to fight him again
-			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter=0;
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter = 0;
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenJerome");
-			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
+			SceneManager.LoadScene ("Tutorial1");
 			Time.timeScale = 1;
+			Noam.Hp = 100;
+			Debug.Log (Noam.Hp);
 			break;	
 
 		}

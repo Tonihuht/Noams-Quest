@@ -179,6 +179,8 @@ public class AbraFight2 : MonoBehaviour {
 			SceneManager.UnloadSceneAsync ("FightScreenAbra2");
 			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
+			Noam.Hp = 100;
+			Debug.Log (Noam.Hp);
 			break;	
 
 		}

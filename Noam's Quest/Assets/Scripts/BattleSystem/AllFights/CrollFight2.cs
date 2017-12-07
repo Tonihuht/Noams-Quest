@@ -180,11 +180,13 @@ public class CrollFight2 : MonoBehaviour {
 			Debug.Log ("LOSE");
 			//you lost
 			//Decreases crollCounter by 1 so you have to fight him again
-			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter2=0;
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter2 = 0;
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenCroll2");
 			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
+			Noam.Hp = 100;
+			Debug.Log (Noam.Hp);
 			break;	
 
 		}

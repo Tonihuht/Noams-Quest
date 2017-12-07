@@ -180,7 +180,8 @@ public class EnemyFight2 : MonoBehaviour {
 			SceneManager.UnloadSceneAsync ("FightScreenEnemy2");
 			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
-
+			Noam.Hp = 100;
+			Debug.Log (Noam.Hp);
 			break;	
 
 		}
