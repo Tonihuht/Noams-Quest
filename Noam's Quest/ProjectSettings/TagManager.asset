@@ -29,6 +29,7 @@ TagManager:
   - BridgeKeyItem2
   - BridgeDoor1
   - BridgeDoor2
+  - EnemyFight2
   layers:
   - Default
   - TransparentFX

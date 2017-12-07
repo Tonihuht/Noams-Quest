@@ -40,7 +40,8 @@ public class CrollFight1 : MonoBehaviour {
 	}
 
 	void Update () {
-
+		Croll.Dmg = 500;
+		Croll.Accuracy = 500;
 		switch (currentState) {
 		//Players move
 		case (FightStates.PLAYERCHOICE):
@@ -110,8 +111,8 @@ public class CrollFight1 : MonoBehaviour {
 					Noam.Hp = Noam.Hp - Croll.Dmg;
 				}
 				//resets Croll Damage(dmg) and accuracy to original value
-				Croll.Dmg = 50;
-				Croll.Accuracy = 50;
+				Croll.Dmg = 500;
+				Croll.Accuracy = 500;
 				//Checks if the player is alive
 				if (Noam.Hp > 0) {
 					// If yes, changes state to PLAYERCHOISE
@@ -128,8 +129,8 @@ public class CrollFight1 : MonoBehaviour {
 				//changes fightstate to PLAYERCHOICE
 				//resets Croll Dmg and accuracy statistics to original values
 				currentState = FightStates.PLAYERCHOICE;
-				Croll.Dmg = 50;
-				Croll.Accuracy = 50;
+				Croll.Dmg = 500;
+				Croll.Accuracy = 500;
 			}
 			//Dodge move happens if randomAction variable shuffles 5
 			if (randomAction == 5) {
@@ -138,8 +139,8 @@ public class CrollFight1 : MonoBehaviour {
 				//changes fightstate to PLAYERCHOICE
 				//resets Croll Dmg and accuracy statistics to original values
 				currentState = FightStates.PLAYERCHOICE;
-				Croll.Dmg = 50;
-				Croll.Accuracy = 50;
+				Croll.Dmg = 500;
+				Croll.Accuracy = 500;
 			}
 
 			/*
@@ -170,13 +171,11 @@ public class CrollFight1 : MonoBehaviour {
 			break;	
 
 		case (FightStates.LOSE):
-			Debug.Log ("LOSE");
+			Noam.Hp = 50;
+			Debug.Log ("LOSE" + Noam.Hp);
 			//you lost
-			//Decreases crollCounter by 1 so you have to fight him again
-			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter1--;
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenCroll1");
-			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
 			break;	
 

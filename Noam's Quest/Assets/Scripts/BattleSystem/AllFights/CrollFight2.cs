@@ -18,6 +18,7 @@ public class CrollFight2 : MonoBehaviour {
 	public CanvasToggler canvasT;
 
 
+
 	// Setup all different states that fight can be in
 	public enum FightStates{
 		PLAYERCHOICE,
@@ -37,10 +38,11 @@ public class CrollFight2 : MonoBehaviour {
 		bAttack = GameObject.Find ("AttackButton").GetComponent<ButtonController> ();
 		bDodge = GameObject.Find ("DodgeButton").GetComponent<ButtonController> ();
 		bBlock = GameObject.Find ("BlockButton").GetComponent<ButtonController> ();
+
 	}
 
 	void Update () {
-
+		
 		switch (currentState) {
 		//Players move
 		case (FightStates.PLAYERCHOICE):
@@ -48,10 +50,12 @@ public class CrollFight2 : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.UpArrow) || bAttack.GetButtonPressed()) {
 				//Generate random variable for testing accuracy
 				randomAccuracy = Random.Range (1, 101);
+				//Debug.Log ("RandomAccuracyNoam:"+randomAccuracy);
 				//Compare random variable to Noams accuracy to see if attack hits
 				if (randomAccuracy > 0 && randomAccuracy <= Noam.Accuracy) {
 					//Does Damage(dmg) to enemy
 					Croll.Hp = Croll.Hp - Noam.Dmg;
+					//Debug.Log ("Noam hit"+" Croll left" + Croll.Hp);
 				} 
 				//Reset Noam's Damage(dmg) and accuracy statistics
 				Noam.Dmg = 25;
@@ -104,10 +108,12 @@ public class CrollFight2 : MonoBehaviour {
 
 				//Generate random variable between 1-100 for testing accuracy
 				randomAccuracy = Random.Range (1, 101);
+				Debug.Log (randomAccuracy);
 				//Compare random variable to Croll accuracy to see if attack hits
 				if (randomAccuracy > 0 && randomAccuracy <= Croll.Accuracy) {
 					//Does Damage(dmg) to enemy
 					Noam.Hp = Noam.Hp - Croll.Dmg;
+					Debug.Log ("hit");
 				}
 				//resets Croll Damage(dmg) and accuracy to original value
 				Croll.Dmg = 50;
@@ -158,7 +164,7 @@ public class CrollFight2 : MonoBehaviour {
 			Debug.Log (Croll.Block);
 			Debug.Log (Croll.Dodge);
 			Debug.Log (Croll.Accuracy);
-			*/							
+			*/						
 
 			break;
 
@@ -173,7 +179,7 @@ public class CrollFight2 : MonoBehaviour {
 			Debug.Log ("LOSE");
 			//you lost
 			//Decreases crollCounter by 1 so you have to fight him again
-			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter2--;
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().crollCounter2=0;
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenCroll2");
 			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));

@@ -31,6 +31,7 @@ public class EnemyFight : MonoBehaviour {
 
 
 	void Start () {
+		Debug.Log (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter2);
 		currentState = FightStates.PLAYERCHOICE;
 		Noam = GameObject.Find ("GameController").GetComponent<GameController> ().noam;
 		canvasT = GameObject.Find ("CanvasButton").GetComponent<CanvasToggler> ();
@@ -51,6 +52,7 @@ public class EnemyFight : MonoBehaviour {
 				//Compare random variable to Noams accuracy to see if attack hits
 				if (randomAccuracy > 0 && randomAccuracy <= Noam.Accuracy) {
 					//Does Damage(dmg) to enemy
+					Debug.Log("Hit");
 					Enemy1.Hp = Enemy1.Hp - Noam.Dmg;
 				} 
 				//Reset Noam's Damage(dmg) and accuracy statistics
@@ -163,18 +165,17 @@ public class EnemyFight : MonoBehaviour {
 			break;
 
 		case (FightStates.WIN):
-			Debug.Log ("WIN!");
 			//you won !
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1++;
 			SceneManager.UnloadSceneAsync ("FightScreenEnemy");
 			Time.timeScale = 1;
 			break;	
 
 		case (FightStates.LOSE):
-			Debug.Log ("LOSE");
 			//you lost
 			//Decreases enemyCounter1 by 1 so you have to fight him again
-			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1--;
-			//loads first map
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1=0;
+			//loads first mapDebug.Log (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter2);
 			SceneManager.UnloadSceneAsync ("FightScreenEnemy");
 			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;

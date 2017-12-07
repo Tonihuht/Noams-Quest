@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Maps/Mountain2.unity
     guid: aa018c911c600f6408868984a20f6efc
   - enabled: 1
-    path: Assets/Scenes/TheEnd.unity
+    path: Assets/Scenes/Maps/TheEnd.unity
     guid: 2b095d4a1396e42429c03ac75ae7a986
   - enabled: 1
     path: Assets/Scenes/FightScreens/FightScreenCroll1.unity
@@ -56,3 +56,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FightScreens/FightScreenAbra1.unity
     guid: b0a45b5907a03924ab57c63c89b4d78b
+  - enabled: 1
+    path: Assets/Scenes/FightScreens/FightScreenEnemy2.unity
+    guid: e138f83e80e03f94793a5fc5df737816

@@ -174,11 +174,11 @@ public class AbraFight1 : MonoBehaviour {
 			Debug.Log ("LOSE");
 			//you lost
 			//Decreases abraCounter by 1 so you have to fight him again
-			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter1--;
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().abraCounter1 = 2;
 			//loads first map
 			SceneManager.UnloadSceneAsync ("FightScreenAbra1");
-			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
+			Noam.Hp = 20;
 			break;
 
 		}

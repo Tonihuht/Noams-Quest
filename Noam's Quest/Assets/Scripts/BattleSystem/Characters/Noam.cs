@@ -10,7 +10,7 @@ public class Noam : Character
 		Name = "Noam";
 		Description = "Gnome hero!";
 		Hp = 100;
-		Dmg = 250;
+		Dmg = 25;
 		Block = 5;
 		Dodge = 30;
 		Accuracy = 100;

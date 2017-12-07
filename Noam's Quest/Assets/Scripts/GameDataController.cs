@@ -13,6 +13,7 @@ public class GameDataController : MonoBehaviour
 	public int abraCounter1 = 0;
 	public int abraCounter2 = 0;
 	public int enemyCounter1 = 0;
+	public int enemyCounter2 = 0;
 
 	/*public static GameDataController Instance;
 

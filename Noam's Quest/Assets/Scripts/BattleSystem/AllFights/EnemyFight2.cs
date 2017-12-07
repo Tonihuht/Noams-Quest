@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class JeromeFight : MonoBehaviour
-{
-		
+public class EnemyFight2 : MonoBehaviour {
+
 	//create character and create random variable for accuracy
 	public Character Noam;
-	public Character Jerome = new Jerome ();
+	public Character Enemy2 = new Enemy2();
 	private int randomAccuracy;
 	private int randomAction = 0;
 	public GameDataController controller;
@@ -17,11 +16,10 @@ public class JeromeFight : MonoBehaviour
 	public ButtonController bDodge;
 	public ButtonController bBlock;
 	public CanvasToggler canvasT;
-		
-		
+
+
 	// Setup all different states that fight can be in
-	public enum FightStates
-	{
+	public enum FightStates{
 		PLAYERCHOICE,
 		ENEMYCHOICE,
 		LOSE,
@@ -32,8 +30,7 @@ public class JeromeFight : MonoBehaviour
 
 
 
-	void Start ()
-	{
+	void Start () {
 		currentState = FightStates.PLAYERCHOICE;
 		Noam = GameObject.Find ("GameController").GetComponent<GameController> ().noam;
 		canvasT = GameObject.Find ("CanvasButton").GetComponent<CanvasToggler> ();
@@ -42,9 +39,8 @@ public class JeromeFight : MonoBehaviour
 		bBlock = GameObject.Find ("BlockButton").GetComponent<ButtonController> ();
 	}
 
-	void Update ()
-	{
-		
+	void Update () {
+
 		switch (currentState) {
 		//Players move
 		case (FightStates.PLAYERCHOICE):
@@ -55,13 +51,13 @@ public class JeromeFight : MonoBehaviour
 				//Compare random variable to Noams accuracy to see if attack hits
 				if (randomAccuracy > 0 && randomAccuracy <= Noam.Accuracy) {
 					//Does Damage(dmg) to enemy
-					Jerome.Hp = Jerome.Hp - Noam.Dmg;
+					Enemy2.Hp = Enemy2.Hp - Noam.Dmg;
 				} 
 				//Reset Noam's Damage(dmg) and accuracy statistics
 				Noam.Dmg = 25;
 				Noam.Accuracy = 100;
 				//Checks if the enemy is alive 
-				if (Jerome.Hp > 0) {
+				if (Enemy2.Hp > 0) {
 					// If yes, changes state to ENEMYSCHOICE
 					currentState = FightStates.ENEMYCHOICE;
 					//If no, changes state to WIN
@@ -72,7 +68,7 @@ public class JeromeFight : MonoBehaviour
 			// if RightArrow key is pushed player performs a block action
 			if (Input.GetKeyDown (KeyCode.RightArrow) ||bBlock.GetButtonPressed()) {
 				//Block action decreases enemys damage (dmg) statistic
-				Jerome.Dmg = Jerome.Dmg - Noam.Block;
+				Enemy2.Dmg = Enemy2.Dmg - Noam.Block;
 				//switches to Enemys turn and resets Noams Damage(dmg) and accuracy to original value
 				currentState = FightStates.ENEMYCHOICE;
 				Noam.Dmg = 25;
@@ -81,7 +77,7 @@ public class JeromeFight : MonoBehaviour
 			// if LeftArrow key is pushed player performs a dodge action
 			if (Input.GetKeyDown (KeyCode.LeftArrow) || bDodge.GetButtonPressed()) {
 				//Dodge action decreases enemys accuracy statistic
-				Jerome.Accuracy = Jerome.Accuracy - Noam.Dodge;
+				Enemy2.Accuracy = Enemy2.Accuracy - Noam.Dodge;
 				//switches to Enemys turn and resets Noams Damage(dmg) and accuracy to original value
 				currentState = FightStates.ENEMYCHOICE;
 				Noam.Dmg = 25;
@@ -105,17 +101,17 @@ public class JeromeFight : MonoBehaviour
 			randomAction = Random.Range (1, 6);
 			//Attack move happens if randomAction variable shuffles 1-3
 			if (randomAction < 4) {
-				
+
 				//Generate random variable between 1-100 for testing accuracy
 				randomAccuracy = Random.Range (1, 101);
-				//Compare random variable to Jeromes accuracy to see if attack hits
-				if (randomAccuracy > 0 && randomAccuracy <= Jerome.Accuracy) {
+				//Compare random variable to Enemy2 accuracy to see if attack hits
+				if (randomAccuracy > 0 && randomAccuracy <= Enemy2.Accuracy) {
 					//Does Damage(dmg) to enemy
-					Noam.Hp = Noam.Hp - Jerome.Dmg;
+					Noam.Hp = Noam.Hp - Enemy2.Dmg;
 				}
-				//resets Jeromes Damage(dmg) and accuracy to original value
-				Jerome.Dmg = 25;
-				Jerome.Accuracy = 100;
+				//resets Enemy2 Damage(dmg) and accuracy to original value
+				Enemy2.Dmg = 30;
+				Enemy2.Accuracy = 70;
 				//Checks if the player is alive
 				if (Noam.Hp > 0) {
 					// If yes, changes state to PLAYERCHOISE
@@ -128,24 +124,24 @@ public class JeromeFight : MonoBehaviour
 			//Block move happens if randomAction variable shuffles 4
 			if (randomAction == 4) {
 				//Block decreases Noam's Dmg
-				Noam.Dmg = Noam.Dmg - Jerome.Block;
+				Noam.Dmg = Noam.Dmg - Enemy2.Block;
 				//changes fightstate to PLAYERCHOICE
-				//resets Jeromes Dmg and accuracy statistics to original values
+				//resets Enemy2 Dmg and accuracy statistics to original values
 				currentState = FightStates.PLAYERCHOICE;
-				Jerome.Dmg = 25;
-				Jerome.Accuracy = 100;
+				Enemy2.Dmg = Enemy2.Dmg + 10;
+				Enemy2.Accuracy = Enemy2.Accuracy + 10;
 			}
 			//Dodge move happens if randomAction variable shuffles 5
 			if (randomAction == 5) {
 				//Dodge decreasses Noams accuracy
-				Noam.Accuracy = Noam.Accuracy - Jerome.Dodge;
+				Noam.Accuracy = Noam.Accuracy - Enemy2.Dodge;
 				//changes fightstate to PLAYERCHOICE
-				//resets Jeromes Dmg and accuracy statistics to original values
+				//resets Enemy2 Dmg and accuracy statistics to original values
 				currentState = FightStates.PLAYERCHOICE;
-				Jerome.Dmg = 25;
-				Jerome.Accuracy = 100;
+				Enemy2.Dmg = Enemy2.Dmg + 10;
+				Enemy2.Accuracy = Enemy2.Accuracy + 10;
 			}
-			Debug.Log ("Your health: " + Noam.Hp);
+
 			/*
 			Debug.Log (Noam.Name);
 			Debug.Log (Noam.Description);
@@ -155,13 +151,13 @@ public class JeromeFight : MonoBehaviour
 			Debug.Log (Noam.Dodge);
 			Debug.Log (Noam.Accuracy);
 
-			Debug.Log (Jerome.Name);
-			Debug.Log (Jerome.Description);
-			Debug.Log (Jerome.Hp);
-			Debug.Log (Jerome.Dmg);
-			Debug.Log (Jerome.Block);
-			Debug.Log (Jerome.Dodge);
-			Debug.Log (Jerome.Accuracy);
+			Debug.Log (Enemy2.Name);
+			Debug.Log (Enemy2.Description);
+			Debug.Log (Enemy2.Hp);
+			Debug.Log (Enemy2.Dmg);
+			Debug.Log (Enemy2.Block);
+			Debug.Log (Enemy2.Dodge);
+			Debug.Log (Enemy2.Accuracy);
 			*/							
 
 			break;
@@ -169,35 +165,34 @@ public class JeromeFight : MonoBehaviour
 		case (FightStates.WIN):
 			Debug.Log ("WIN!");
 			//you won !
-			//Loads last map played before fight screen
-			SceneManager.UnloadSceneAsync ("FightScreenJerome");
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter2++;
+			SceneManager.UnloadSceneAsync ("FightScreenEnemy2");
 			Time.timeScale = 1;
-			canvasT.ToggleCanvas();
 			break;	
 
 		case (FightStates.LOSE):
 			Debug.Log ("LOSE");
 			//you lost
-			//Decreases jeromeCounter by 1 so you have to fight him again
-			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().jeromeCounter=0;
+			//Decreases enemyCounter2 by 1 so you have to fight him again
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter2=0;
 			//loads first map
-			SceneManager.UnloadSceneAsync ("FightScreenJerome");
+			SceneManager.UnloadSceneAsync ("FightScreenEnemy2");
 			SceneManager.LoadScene (PlayerPrefs.GetString ("LastLevel"));
 			Time.timeScale = 1;
+
 			break;	
 
 		}
 
 	}
-
 	/*private void PlayerHpCounter() {
 			print (Noam.Hp);
 	}	
 		private void EnemyHpCounter () {
-			print (Jerome.Hp);
+			print (Enemy2.Hp);
 	}*/
 
 }
 
-	
+
 

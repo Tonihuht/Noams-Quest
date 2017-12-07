@@ -167,7 +167,20 @@ public class PlayerControl : MonoBehaviour
 				canvasT.ToggleCanvas();
 			} else {
 				Destroy (col.gameObject);
-				GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1-=2;
+				GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter1=0;
+			}
+		}
+
+		if (col.gameObject.tag == "EnemyFight2") {
+			GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter2++;
+			if (GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter2 < 2) {
+				Time.timeScale = 0;
+				PlayerPrefs.SetString ("LastLevel", SceneManager.GetActiveScene ().name);
+				SceneManager.LoadSceneAsync ("FightScreenEnemy2",LoadSceneMode.Additive);
+				canvasT.ToggleCanvas();
+			} else {
+				Destroy (col.gameObject);
+				GameObject.FindGameObjectWithTag ("InventoryCanvas").GetComponent<GameDataController> ().enemyCounter2=0;
 			}
 		}
 
