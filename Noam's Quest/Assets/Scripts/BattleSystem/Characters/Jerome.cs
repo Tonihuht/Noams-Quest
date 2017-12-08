@@ -10,7 +10,7 @@ public class Jerome : Character {
 		Hp = 100;
 		Dmg = 25;
 		Block = 5;
-		Dodge = 30;
+		Dodge = 25;
 		Accuracy = 100;
 	}
 
