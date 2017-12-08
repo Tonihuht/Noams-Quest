@@ -14,6 +14,7 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
 	public void Start ()
 	{
+		//Finds player
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 

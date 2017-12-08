@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameDataController : MonoBehaviour
 {	
-	
+	//Creates variables that are needed to store the data of "NPC encounters
 	public Text hpText;
 	public int jeromeCounter = 0;
 	public int crollCounter1 = 0;

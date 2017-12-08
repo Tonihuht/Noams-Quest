@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HandleCanvas : MonoBehaviour
 {
-
+	//Creates the variables needed for the invetorys canvas scaling
 	private CanvasScaler scaler;
 	// Use this for initialization
 	void Start ()

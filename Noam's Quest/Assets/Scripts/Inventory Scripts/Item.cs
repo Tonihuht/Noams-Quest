@@ -20,7 +20,7 @@ public class Item : MonoBehaviour
 	void Start () {
 		Noam = GameObject.Find ("GameController").GetComponent<GameController> ().noam;
 	}
-	// Use this for initialization
+	//When called defines the used items type
 	public void Use ()
 	{
 		switch (type) {

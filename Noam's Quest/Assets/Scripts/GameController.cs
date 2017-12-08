@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+	//Instantiates the players stats
 	public Character noam;
 
 	void Start ()
 	{	
+		//Calls the instance
 		DontDestroyOnLoad (gameObject);
 		noam = new Noam ();
 		/*noamsHP = noam.Hp;

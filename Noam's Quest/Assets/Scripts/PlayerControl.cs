@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
-	//Instantiates variables the player uses
+	//Instantiates variables the player uses, such as buttons and some booleans
 	public int playerSpeed = 5;
 	private float moveX;
 	private float moveY;
@@ -87,7 +87,9 @@ public class PlayerControl : MonoBehaviour
 		//Physics for the player
 		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveX * playerSpeed, moveY * playerSpeed);
 	}
-
+	/// <summary>
+	/// Flips the player.
+	/// </summary>
 	public void FlipPlayer ()
 	{
 		facingLeft = !facingLeft;
@@ -96,7 +98,10 @@ public class PlayerControl : MonoBehaviour
 		transform.localScale = localScale;
 	}
 
-	// Update is called once per frame
+	/// <summary>
+	/// Detects players collisions with other objects
+	/// </summary>
+	/// <param name="col">Col.</param>
 	void OnCollisionEnter2D (Collision2D col)
 	{
 		if (col.gameObject.tag == "BridgeDoor1") {
@@ -269,7 +274,9 @@ public class PlayerControl : MonoBehaviour
 			Destroy (col.gameObject);
 		}
 	}
-
+	/// <summary>
+	/// Instantiates ESC button to work as a Pause Button
+	/// </summary>
 	void Buttons ()
 	{
 		if (Input.GetKeyDown (KeyCode.Escape)) {
